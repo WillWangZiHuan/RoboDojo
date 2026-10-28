@@ -1,0 +1,16 @@
+{
+  "result": {
+    "status": "submitted",
+    "cli_exit_code": 0,
+    "started_unix": 1793190297.805176,
+    "finished_unix": 1793196136.117144,
+    "transport_recoveries": 0
+  },
+  "native_stream_retry_events": [],
+  "native_stream_retry_count": 0,
+  "watchdog_restarts": 0,
+  "native_compaction_timestamps": [
+    "2026-10-28T14:02:03.646Z"
+  ],
+  "interpretation": "Model-list refresh errors also occurred during successful activity; these alone do not prove a stalled stream or network root cause. Autonomous reset is a model action, not an operator recovery."
+}

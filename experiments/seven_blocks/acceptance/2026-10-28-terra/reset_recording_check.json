@@ -1,0 +1,30 @@
+{
+  "frames": 2944,
+  "recorded_frames_match": true,
+  "sequential": true,
+  "monotonic_tick": true,
+  "monotonic_wall": true,
+  "reset_frames": 10,
+  "reset_frame_range": [
+    80,
+    89
+  ],
+  "recorded_physics_steps": 29436,
+  "episode_counted_physics_steps": 29336,
+  "difference_explanation": "100 reset settling steps are recorded by physics_observer; episode counters preserve action steps and do not add settling steps.",
+  "visual_boundary_check": {
+    "passed": true,
+    "reviewed_head_frames": [
+      0,
+      79,
+      80,
+      89,
+      900,
+      1600,
+      2300,
+      2943
+    ],
+    "contact_sheet": "simulation/video_review_contact_sheet.png",
+    "observation": "Frame79 shows displaced orange cube and arm; frame80 shows initial scene restored; frame89 maintains restored scene. Later samples show progressive stacking and the final seven-layer tower."
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "frozen_unix": 1793177414.5160341,
+  "reference_run": "astra_20261028_003",
+  "purpose": "Compare later independent model trials against actual initial scene and shared interface conditions; never provide previous model goals or trajectories to a model.",
+  "shared_model_condition": {
+    "instruction": "用这些小方块展示你模型的最强能力。不限动作，不限失败，可以反复尝试，直到你满意、愿意提交答案为止。",
+    "original_user_text": "用这些小方块展示你模型的最强能力 不限动作 不限失败 可以反复尝试 直到你满意愿意提交答案位置",
+    "instruction_normalization": "punctuation and 位置 interpreted as 为止, as documented before the run",
+    "reasoning_effort": "high",
+    "system_prompt": "You control the seven-block robot environment through the seven_blocks robot tool.\nBegin by observing. The user's instruction is the complete task; choose your own\ngoal, actions, retries, and stopping point. Use physical tool feedback and images.\nSimulator coordinates are available. Native planning is an actuator service, not\na task planner. No examples, demonstrations, target layout, reward, personal memory\nor prior trial transcript are provided. You may retry or reset without an action\nor failure count limit. Only a successful explicit op=submit ends the experiment\nas your voluntary submission. A final chat message without submit is an interruption.\nGive brief observable progress notes in Chinese when useful. Do not ask a human\nto choose the artwork or stopping point; those choices are yours. After submit,\ngive your final description and stop calling tools. Use only the robot MCP tool.\n",
+    "simulator_ground_truth": true,
+    "native_curobo": true,
+    "vla": false,
+    "max_turns": null,
+    "max_actions": null,
+    "max_failures": null,
+    "model_timeout_seconds": null,
+    "demonstrations": [],
+    "personal_memory": false,
+    "transport_idle_recovery_seconds": 600,
+    "auto_compact_token_limit": 60000
+  },
+  "initial_response": {
+    "state": {
+      "blocks": {
+        "red": {
+          "position": [
+            -0.2999545633792877,
+            -0.13999289274215698,
+            0.7825000286102295
+          ],
+          "orientation_wxyz": [
+            1.0,
+            -1.275772092412808e-06,
+            -6.277973625401501e-07,
+            9.835855507844826e-07
+          ],
+          "world_bounds": [
+            [
+              -0.31745460629463196,
+              -0.15749295055866241,
+              0.7649999856948853
+            ],
+            [
+              -0.2824545204639435,
+              -0.12249284237623215,
+              0.8000000715255737
+            ]
+          ],
+          "rgb": [
+            0.85,
+            0.04,
+            0.04
+          ]
+        },
+        "orange": {
+          "position": [
+            -0.09995456039905548,
+            -0.13999289274215698,
+            0.7825000286102295
+          ],
+          "orientation_wxyz": [
+            1.0,
+            -1.5228537222355953e-06,
+            -6.631315159211226e-07,
+            8.345112973984214e-07
+          ],
+          "world_bounds": [
+            [
+              -0.11745459586381912,
+              -0.15749295055866241,
+              0.7649999856948853
+            ],
+            [
+              -0.08245452493429184,
+              -0.12249283492565155,
+              0.8000000715255737
+            ]
+          ],
+          "rgb": [
+            1.0,
+            0.3,
+            0.015
+          ]
+        },
+        "yellow": {
+          "position": [
+            0.10004544258117676,
+            -0.13999289274215698,
+            0.7825000286102295
+          ],
+          "orientation_wxyz": [
+            1.0,
+            -1.5228537222355953e-06,
+            -6.631315159211226e-07,
+            8.345112973984214e-07
+          ],
+          "world_bounds": [
+            [
+              0.08254540711641312,
+              -0.15749295055866241,
+              0.7649999856948853
+            ],
+            [
+              0.1175454780459404,
+              -0.12249283492565155,
+              0.8000000715255737
+            ]
+          ],
+          "rgb": [
+            0.95,
+            0.8,
+            0.02
+          ]
+        },
+        "green": {
+          "position": [
+            0.3000454604625702,
+            -0.13999289274215698,
+            0.7825000286102295
+          ],
+          "orientation_wxyz": [
+            1.0,
+            -1.275772092412808e-06,
+            -6.277973625401501e-07,
+            9.835855507844826e-07
+          ],
+          "world_bounds": [
+            [
+              0.28254541754722595,
+              -0.15749295055866241,
+              0.7649999856948853
+            ],
+            [
+              0.31754550337791443,
+              -0.12249284237623215,
+              0.8000000715255737
+            ]
+          ],
+          "rgb": [
+            0.04,
+            0.55,
+            0.1
+          ]
+        },
+        "blue": {
+          "position": [
+            -0.1999545693397522,
+            0.04000711068511009,
+            0.7825000286102295
+          ],
+          "orientation_wxyz": [
+            1.0,
+            -1.377492139909009e-06,
+            -6.490320174634689e-07,
+            7.57087661895639e-07
+          ],
+          "world_bounds": [
+            [
+              -0.21745461225509644,
+              0.022507060319185257,
+              0.7649999856948853
+            ],
+            [
+              -0.18245452642440796,
+              0.05750716105103493,
+              0.8000000715255737
+            ]
+          ],
+          "rgb": [
+            0.035,
+            0.18,
+            0.85
+          ]
+        },
+        "purple": {
+          "position": [
+            4.5438417146215215e-05,
+            0.04000711068511009,
+            0.7825000286102295
+          ],
+          "orientation_wxyz": [
+            1.0,
+            -1.482502511862549e-06,
+            -6.399558287739637e-07,
+            7.739294574093947e-07
+          ],
+          "world_bounds": [
+            [
+              -0.0174545980989933,
+              0.02250705659389496,
+              0.7649999856948853
+            ],
+            [
+              0.01754547469317913,
+              0.057507164776325226,
+              0.8000000715255737
+            ]
+          ],
+          "rgb": [
+            0.45,
+            0.05,
+            0.65
+          ]
+        },
+        "white": {
+          "position": [
+            0.20004543662071228,
+            0.04000711068511009,
+            0.7825000286102295
+          ],
+          "orientation_wxyz": [
+            1.0,
+            -1.377492139909009e-06,
+            -6.490320174634689e-07,
+            7.57087661895639e-07
+          ],
+          "world_bounds": [
+            [
+              0.18254539370536804,
+              0.022507060319185257,
+              0.7649999856948853
+            ],
+            [
+              0.21754547953605652,
+              0.05750716105103493,
+              0.8000000715255737
+            ]
+          ],
+          "rgb": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        }
+      },
+      "robot_joints": {
+        "left_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "status": "running",
+      "actions": 0,
+      "physics_steps": 0,
+      "resets": 0,
+      "robot_tcp": {
+        "left_arm": {
+          "position": [
+            -0.29957287255736786,
+            -0.20729987226757057,
+            0.9215000306075758
+          ],
+          "orientation_wxyz": [
+            0.7069999575614929,
+            -4.327419134142474e-08,
+            -6.000607299938565e-08,
+            0.7072135210037231
+          ],
+          "base_position": [
+            -0.3,
+            -0.45,
+            0.765
+          ],
+          "gripper_joints": [
+            0.04399999976158142,
+            0.04399999976158142
+          ]
+        },
+        "right_arm": {
+          "position": [
+            0.30042715128449005,
+            -0.20729987226757057,
+            0.9215000306075758
+          ],
+          "orientation_wxyz": [
+            0.7069999575614929,
+            -4.327419134142474e-08,
+            -6.000607299938565e-08,
+            0.7072135210037231
+          ],
+          "base_position": [
+            0.3,
+            -0.45,
+            0.765
+          ],
+          "gripper_joints": [
+            0.04399999976158142,
+            0.04399999976158142
+          ]
+        }
+      },
+      "tabletop_z": 0.765
+    },
+    "control_template": {
+      "left_arm_joint_state": {
+        "position": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "left_ee_joint_state": {
+        "position": [
+          0.044,
+          0.044
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ]
+      },
+      "right_arm_joint_state": {
+        "position": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "velocity": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right_ee_joint_state": {
+        "position": [
+          0.044,
+          0.044
+        ],
+        "velocity": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "dt": 0.004,
+    "operations": [
+      "observe",
+      "act",
+      "reset",
+      "submit",
+      "stop",
+      "move",
+      "gripper",
+      "wait"
+    ],
+    "instruction": "用这些小方块展示你模型的最强能力。不限动作，不限失败，可以反复尝试，直到你满意、愿意提交答案为止。"
+  },
+  "reference_source_sha256": {
+    "experiments/seven_blocks/agent_bridge.py": "6aa9a7dec08f7c44c65858a48e14f0a857b4e56c53093ae04840af92958f0a6c",
+    "experiments/seven_blocks/batch_transport.py": "8cd00ded59f1647f7bbacf7326907c584c2d0488221b53753f23037850414c65",
+    "experiments/seven_blocks/check_recovery.py": "caacc8cdac89891a60a503e72ef91be641ca8666a56aafbc11fb8a403a590afd",
+    "experiments/seven_blocks/check_stdio.py": "123401f970e04a724f1f028fb7d9765c69ef638d784127ff42b806a7f8c61b98",
+    "experiments/seven_blocks/collect_run.py": "4555b6039950b7ba6d02b87e7ed91a3e8b74f4e5e1211214c2257d082723631c",
+    "experiments/seven_blocks/environment.py": "90e13638b65f114cf280c81cd3cc625902fa2e8960506e794bbbee99bc097765",
+    "experiments/seven_blocks/manipulation.py": "f989ce1746d8fab77c538b3525d9c0605aed2dbe8573fbede969db255acc4b43",
+    "experiments/seven_blocks/protocol.py": "52257df700ad08a4ce69a76d34e009a00b9fe6acaa6964d3f43aa299fb373d55",
+    "experiments/seven_blocks/recording.py": "28e2be59e51afd94cd6d59113a6a041602303d4f628f225e8a9be877729452ac",
+    "experiments/seven_blocks/render_agent_video.py": "4d61aea5285eb3324a9fd51a13288c8d526b3916a56692240bac6c42b277684d",
+    "experiments/seven_blocks/run.py": "6f591dd7992d8e766c42de43042a9e77349d5956477a31a4db485757b5dcb4b4",
+    "experiments/seven_blocks/run_agent.py": "e6c1d282cf1d8f407a9f5b1e056fd7789d8db152e8c90f43d99144f6e4ca38e0",
+    "experiments/seven_blocks/spatial_control.py": "72e5e7ba16f27e8382ab3f4092091ef832071d4d21c437d3501eda8a6596bcc3",
+    "experiments/seven_blocks/verify_recordings.py": "55adeec8d14599fa25449d9d93828fef4104c22ef131e6aef5d9793fac96d870"
+  },
+  "comparison_status": "Sol and Terra not started; parity not yet verified",
+  "visual_input_reporting": "The robot tool offers three camera images on every reply. Native orchestration lets each model select image content to expose as actual visual input; report per-model native input_image hashes and camera counts rather than assuming all offered images were input. This is unchanged from the Astra run.",
+  "runtime_guard_revision": {
+    "reason": "Count unfinished initial MCP requests during Slurm queue waiting, before bridge RPC exists. No change to model prompt, observation options, physics, task actions, or stopping criterion.",
+    "source_hashes": {
+      "experiments/seven_blocks/run_agent.py": "ad2b7c65d4d51cb6b8ae19bce115299d1f7f993a8a83176710f25d99276e0e1a",
+      "experiments/seven_blocks/check_recovery.py": "fb1c22ccf9ee2d57aaa1308fb905d02e689705e7565a518f7e7ec95f6b0a17a1"
+    },
+    "loaded_runtime_note": "Astra and Sol were launched with the original run_agent hash frozen in their per-run source snapshots. Sol uses a recorded supervisor-only queue maintenance window. Subsequent launches use the corrected guard and freeze their exact source hashes."
+  }
+}

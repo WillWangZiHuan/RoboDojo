@@ -1,0 +1,230 @@
+{
+  "status": "submitted",
+  "name": "七色光塔",
+  "submission": {
+    "op": "submit",
+    "description": "七色光塔：七个立方块自下而上依次为红、橙、黄、绿、蓝、紫、白，垂直精确叠放，白色作为塔顶。",
+    "reason": "七块全部使用，塔体对齐，释放夹爪并等待物理模拟后仍稳定直立。"
+  },
+  "submission_request_unix": 1793196068.796612,
+  "submission_response_unix": 1793196075.944938,
+  "model_controller_to_submit_seconds": 5770.991436004639,
+  "model_controller_to_exit_seconds": 5838.31196808815,
+  "bridge_requests_total": 104,
+  "operator_preflight_observe_requests": 1,
+  "model_tool_requests": 103,
+  "model_tool_responses": 103,
+  "physics_steps": 29336,
+  "low_level_actions": 14805,
+  "resets": 1,
+  "reset_requests": [
+    {
+      "wall_unix": 1793190633.224252,
+      "event": "request",
+      "request": {
+        "op": "reset",
+        "reason": "重新布置，采用垂直接近避免碰撞方块。"
+      },
+      "index": 4
+    }
+  ],
+  "planning_failures": [
+    {
+      "index": 13,
+      "request": {
+        "op": "move",
+        "arm": "left_arm",
+        "tcp": [
+          0.1,
+          -0.14,
+          0.91
+        ],
+        "tilt_degrees": 0,
+        "yaw_degrees": 0
+      },
+      "planning_status": "Fail"
+    },
+    {
+      "index": 48,
+      "request": {
+        "op": "move",
+        "arm": "left_arm",
+        "tcp": [
+          -0.2,
+          0.04,
+          0.92
+        ],
+        "tilt_degrees": 0,
+        "yaw_degrees": 0
+      },
+      "planning_status": "Fail"
+    },
+    {
+      "index": 68,
+      "request": {
+        "op": "move",
+        "arm": "left_arm",
+        "tcp": [
+          0,
+          0.04,
+          0.95
+        ],
+        "tilt_degrees": 30,
+        "yaw_degrees": 0
+      },
+      "planning_status": "Fail"
+    },
+    {
+      "index": 81,
+      "request": {
+        "op": "move",
+        "arm": "left_arm",
+        "tcp": [
+          -0.3,
+          -0.14,
+          1.08
+        ],
+        "tilt_degrees": 0,
+        "yaw_degrees": 0
+      },
+      "planning_status": "Fail"
+    },
+    {
+      "index": 95,
+      "request": {
+        "op": "move",
+        "arm": "left_arm",
+        "tcp": [
+          0.00015,
+          -0.22006,
+          1.01
+        ],
+        "tilt_degrees": 0,
+        "yaw_degrees": 0
+      },
+      "planning_status": "Fail"
+    }
+  ],
+  "height_above_table_m": 0.24498485088348387,
+  "blocks": [
+    {
+      "color": "red",
+      "position_m": [
+        -0.29995468258857727,
+        -0.13999296724796295,
+        0.7824995517730713
+      ],
+      "yaw_degrees": 0.0001482915479638057,
+      "square_outline_error_degrees": 0.00014829154796558441,
+      "vertical_center_error_m": -4.4822692868429215e-07
+    },
+    {
+      "color": "orange",
+      "position_m": [
+        -0.3000202178955078,
+        -0.14008459448814392,
+        0.817491352558136
+      ],
+      "yaw_degrees": -0.029395062659321288,
+      "square_outline_error_degrees": 0.029395062659318683,
+      "vertical_center_error_m": -8.647441864018113e-06
+    },
+    {
+      "color": "yellow",
+      "position_m": [
+        -0.3000432848930359,
+        -0.1399555504322052,
+        0.8524903059005737
+      ],
+      "yaw_degrees": 0.7243142811729176,
+      "square_outline_error_degrees": 0.7243142811729157,
+      "vertical_center_error_m": -9.694099426305058e-06
+    },
+    {
+      "color": "green",
+      "position_m": [
+        -0.29997846484184265,
+        -0.13999593257904053,
+        0.8874839544296265
+      ],
+      "yaw_degrees": 0.17937949145852547,
+      "square_outline_error_degrees": 0.17937949145852627,
+      "vertical_center_error_m": -1.6045570373490747e-05
+    },
+    {
+      "color": "blue",
+      "position_m": [
+        -0.29993999004364014,
+        -0.14000611007213593,
+        0.9224840402603149
+      ],
+      "yaw_degrees": 0.0769793831371521,
+      "square_outline_error_degrees": 0.07697938313715014,
+      "vertical_center_error_m": -1.595973968504527e-05
+    },
+    {
+      "color": "purple",
+      "position_m": [
+        -0.2999877631664276,
+        -0.13999627530574799,
+        0.9574812650680542
+      ],
+      "yaw_degrees": 0.0701875566987933,
+      "square_outline_error_degrees": 0.07018755669879084,
+      "vertical_center_error_m": -1.8734931945818545e-05
+    },
+    {
+      "color": "white",
+      "position_m": [
+        -0.2999677360057831,
+        -0.14002810418605804,
+        0.9924811720848083
+      ],
+      "yaw_degrees": 0.06557244061182742,
+      "square_outline_error_degrees": 0.06557244061182388,
+      "vertical_center_error_m": -1.8827915191588218e-05
+    }
+  ],
+  "max_horizontal_offset_from_base_center_m": 0.00011265179802231906,
+  "max_square_outline_error_degrees": 0.7243142811729157,
+  "final_wait_physics_steps": 250,
+  "final_wait_simulation_seconds": 1.0,
+  "max_center_drift_during_final_wait_m": 1.0060888412348569e-05,
+  "actual_native_image_inputs": {
+    "cam_head": 4,
+    "cam_left_wrist": 4,
+    "cam_right_wrist": 4
+  },
+  "actual_native_image_count": 12,
+  "transport_recoveries": 0,
+  "cli_exit_code": 0,
+  "visual_check": {
+    "head": "Seven aligned layers visible in final head PNG 000104; left open gripper above tower, right arm away.",
+    "wrist_cameras": "Final left wrist shows seven layers below the open fingers; right wrist sees clear table. All three final PNGs inspected."
+  },
+  "limitations": [
+    "One independent exploratory trial per model; no capability ranking or upper-bound claim.",
+    "One-second simulated settling check, not long-term or hardware stability.",
+    "Numeric center drift is simulator output, not real robot placement precision.",
+    "Native motion planner and ground-truth coordinates supplied; model does not directly learn low-level control.",
+    "Preflight operator observe is excluded from model tool counts."
+  ],
+  "episode_terminal_check": {
+    "passed": true,
+    "physical_fields_exact_match": {
+      "blocks": true,
+      "robot_joints": true,
+      "actions": true,
+      "physics_steps": true,
+      "resets": true
+    },
+    "episode_status": "submitted",
+    "terminal_status": "submitted",
+    "submission_snapshot_status": "running",
+    "not_in_episode_snapshot": [
+      "robot_tcp",
+      "tabletop_z"
+    ],
+    "note": "Episode snapshot has base environment fields and is captured before status finalization. Compare all available physical fields; TCP/table height are separately present in terminal response."
+  }
+}

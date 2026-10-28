@@ -1,0 +1,12 @@
+{
+  "checked_unix": 1793196364.816291,
+  "job_id": 49052,
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "01:41:21",
+  "evidence": "sacct -j 49052 --noheader --parsable2 --format=JobID,State,ExitCode,Elapsed",
+  "rows": [
+    "49052|COMPLETED|0:0|01:41:21",
+    "49052.batch|COMPLETED|0:0|01:41:21"
+  ]
+}

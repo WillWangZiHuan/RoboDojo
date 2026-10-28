@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "scope": "Actual input_image items in native tool outputs, including repeated deliveries",
+  "images_delivered_to_model": 12,
+  "unique_image_hashes_delivered": 12,
+  "all_match_saved_observations": true,
+  "native_sources": [
+    {
+      "file": "rollout-2026-10-28T20-24-58-01a18278-81ed-7163-bb65-95c7b28129f9.jsonl",
+      "sha256": "5c57a7dee9f29d65bf4871bf84d47584a7d967a45987268be384e435b746743b"
+    }
+  ],
+  "images": [
+    {
+      "timestamp": "2026-10-28T12:28:17.161Z",
+      "call_id": "call_90530067802d4576ba6a2d4081c4ade5",
+      "sha256": "2714278266e2ae0a349efb4399d9edcb48e1b61656f02f54ee1186d39b92e5f8",
+      "bytes": 352397,
+      "matching_local_files": [
+        "bridge/observations/000002/frame_000002_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:28:17.161Z",
+      "call_id": "call_90530067802d4576ba6a2d4081c4ade5",
+      "sha256": "d80bc8e41befaacfc826432bbab9eb64958c47dc6a06df797bba6bf91e67bb0b",
+      "bytes": 314306,
+      "matching_local_files": [
+        "bridge/observations/000002/frame_000002_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:28:17.161Z",
+      "call_id": "call_90530067802d4576ba6a2d4081c4ade5",
+      "sha256": "0b8fb025fb7473702f066a0e306ee6c7e80bee3acb444c8490114452b4f15ac2",
+      "bytes": 315942,
+      "matching_local_files": [
+        "bridge/observations/000002/frame_000002_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:29:21.606Z",
+      "call_id": "call_3f97e514d26c4ef2a16d517ed8a3a63e",
+      "sha256": "6648a6bef2c379baf4f3402a32b10d606c3cf22e1dd54a36a39d47598acee4e5",
+      "bytes": 374598,
+      "matching_local_files": [
+        "bridge/observations/000003/frame_000003_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:29:21.606Z",
+      "call_id": "call_3f97e514d26c4ef2a16d517ed8a3a63e",
+      "sha256": "cc59aa23ac1b8a1b61a2399bc9350bb8490c7360c2791c6a8e821ae648331ede",
+      "bytes": 286132,
+      "matching_local_files": [
+        "bridge/observations/000003/frame_000003_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:29:21.606Z",
+      "call_id": "call_3f97e514d26c4ef2a16d517ed8a3a63e",
+      "sha256": "bedbbe1afdffebad754b6ecab5fc5401825535cac3e8e73a15aaa631c3c94557",
+      "bytes": 333234,
+      "matching_local_files": [
+        "bridge/observations/000003/frame_000003_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T14:01:00.107Z",
+      "call_id": "call_60b8a2c078af47df90461fc9a55f1da2",
+      "sha256": "5c4406d1b349d576def4e784c91e601ab3c17bb0e0b985ed743478244cd0ef92",
+      "bytes": 405976,
+      "matching_local_files": [
+        "bridge/observations/000103/frame_000103_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T14:01:00.107Z",
+      "call_id": "call_60b8a2c078af47df90461fc9a55f1da2",
+      "sha256": "0b49d99de35f543dc27dca263897d28fe59394f90445134654695ff03b26b598",
+      "bytes": 320006,
+      "matching_local_files": [
+        "bridge/observations/000103/frame_000103_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T14:01:00.107Z",
+      "call_id": "call_60b8a2c078af47df90461fc9a55f1da2",
+      "sha256": "af0bcbd9f2c337b324bce030c7edfdc2791ee5e105e180329fb92be1b905b1fc",
+      "bytes": 314271,
+      "matching_local_files": [
+        "bridge/observations/000103/frame_000103_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T14:01:54.879Z",
+      "call_id": "call_b3347f305bfd4a2e9e9e00faa6925abf",
+      "sha256": "5ecc18ab73255fb3acae25d46a2be08b868bb1a5268ccb36504b67b4b3dd082e",
+      "bytes": 405968,
+      "matching_local_files": [
+        "bridge/observations/000104/frame_000104_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T14:01:54.879Z",
+      "call_id": "call_b3347f305bfd4a2e9e9e00faa6925abf",
+      "sha256": "382741acdd637325e977248d3a779408ad8d7ebc52a1be850b35edfab43db3e9",
+      "bytes": 320265,
+      "matching_local_files": [
+        "bridge/observations/000104/frame_000104_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T14:01:54.879Z",
+      "call_id": "call_b3347f305bfd4a2e9e9e00faa6925abf",
+      "sha256": "5336edf2e14f58fed374c7e4aceb07ca2bc6d58aa676d2ddd148814d201c118f",
+      "bytes": 314448,
+      "matching_local_files": [
+        "bridge/observations/000104/frame_000104_cam_right_wrist.png"
+      ]
+    }
+  ]
+}

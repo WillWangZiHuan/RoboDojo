@@ -1,0 +1,10 @@
+{
+  "recording_first_frame_unix": 1793190085.889216,
+  "recording_last_observation_unix": 1793196074.6110532,
+  "wall_video_seconds": 5988.721837282181,
+  "model_controller_started_unix": 1793190297.805176,
+  "explicit_submit_request_unix": 1793196068.796612,
+  "model_controller_to_submit_seconds": 5770.991436004639,
+  "pre_model_recording_seconds": 211.91596007347107,
+  "scope": "Recording starts at native initial frame, includes read-only preflight before model; GPU queue before simulator start is in logs, not physical video."
+}

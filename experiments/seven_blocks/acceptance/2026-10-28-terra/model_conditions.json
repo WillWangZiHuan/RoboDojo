@@ -1,0 +1,20 @@
+{
+  "instruction": "用这些小方块展示你模型的最强能力。不限动作，不限失败，可以反复尝试，直到你满意、愿意提交答案为止。",
+  "original_user_text": "用这些小方块展示你模型的最强能力 不限动作 不限失败 可以反复尝试 直到你满意愿意提交答案位置",
+  "instruction_normalization": "punctuation and 位置 interpreted as 为止, as documented before the run",
+  "model": "gpt-6.1-terra",
+  "reasoning_effort": "high",
+  "system_prompt": "You control the seven-block robot environment through the seven_blocks robot tool.\nBegin by observing. The user's instruction is the complete task; choose your own\ngoal, actions, retries, and stopping point. Use physical tool feedback and images.\nSimulator coordinates are available. Native planning is an actuator service, not\na task planner. No examples, demonstrations, target layout, reward, personal memory\nor prior trial transcript are provided. You may retry or reset without an action\nor failure count limit. Only a successful explicit op=submit ends the experiment\nas your voluntary submission. A final chat message without submit is an interruption.\nGive brief observable progress notes in Chinese when useful. Do not ask a human\nto choose the artwork or stopping point; those choices are yours. After submit,\ngive your final description and stop calling tools. Use only the robot MCP tool.\n",
+  "simulator_ground_truth": true,
+  "native_curobo": true,
+  "vla": false,
+  "max_turns": null,
+  "max_actions": null,
+  "max_failures": null,
+  "model_timeout_seconds": null,
+  "demonstrations": [],
+  "personal_memory": false,
+  "resume_thread": null,
+  "transport_idle_recovery_seconds": 600,
+  "auto_compact_token_limit": 60000
+}

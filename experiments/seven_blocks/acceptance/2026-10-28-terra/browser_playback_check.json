@@ -1,0 +1,12 @@
+{
+  "checked_unix": 1793197397.2320619,
+  "url": "http://127.0.0.1:8778/00_查看自主展示.html#terra",
+  "video": "simulation/全过程_观看版_48倍速.mp4",
+  "playback_observed": true,
+  "observed_times_seconds": [
+    5,
+    48
+  ],
+  "visual_evidence": "Browser screenshots showed progression from initial scene at 0:05 to arm manipulation/stacking at 0:48; duration displayed 2:04.",
+  "tab_closed_after_check": true
+}

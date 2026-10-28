@@ -1,0 +1,20 @@
+{
+  "checked_unix": 1793190297.752009,
+  "initial_response_exact_parity": {
+    "state": true,
+    "control_template": true,
+    "dt": true,
+    "operations": true,
+    "instruction": true,
+    "observe_unchanged": true
+  },
+  "state_counters": {
+    "actions": 0,
+    "physics_steps": 0,
+    "resets": 0
+  },
+  "initial_images_local": 3,
+  "source_hashes_match": true,
+  "preflight_completed": true,
+  "passed": true
+}

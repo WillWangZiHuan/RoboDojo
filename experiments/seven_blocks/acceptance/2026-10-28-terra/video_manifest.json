@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "wall_seconds": 5988.721837282181,
+  "view_speed": 48,
+  "timebase": "wall clock from first recorded scene to final observation",
+  "idle_policy": "hold previous physical frame while physics is paused",
+  "original_videos_timebase": "25fps simulation-time sampling, all original frames retained",
+  "videos": [
+    {
+      "path": "videos/cam_head.mp4",
+      "frames": 2944,
+      "fps": 25.0,
+      "full_decode_passed": true,
+      "sha256": "ca821b6b09e79cf41d86ca7ba54280b80ef572f46b3874fe86d66f2723271a22"
+    },
+    {
+      "path": "videos/cam_left_wrist.mp4",
+      "frames": 2944,
+      "fps": 25.0,
+      "full_decode_passed": true,
+      "sha256": "6e7f39114c1051a3405e1852ebe16789ad4b71e6bc1c5908bb967c81f4e29a3e"
+    },
+    {
+      "path": "videos/cam_right_wrist.mp4",
+      "frames": 2944,
+      "fps": 25.0,
+      "full_decode_passed": true,
+      "sha256": "57e63c25448f66ffc6cd206f1cb9c8fbe774ba96ba6e216e15c5348a5fee5b18"
+    },
+    {
+      "path": "全过程_现实时间_1倍速.mp4",
+      "frames": 59889,
+      "fps": 10,
+      "speed": 1,
+      "full_decode_passed": true,
+      "sha256": "aa56504afe26ada903f1b7b402dd61eded8594c1af97149f5958025fddce3952"
+    },
+    {
+      "path": "全过程_观看版_48倍速.mp4",
+      "frames": 3744,
+      "fps": 30,
+      "speed": 48,
+      "full_decode_passed": true,
+      "sha256": "bd1fd23a087b4304e1b85e467271195b136eb4bd26b0e67ec85f9bb90661d891"
+    }
+  ]
+}

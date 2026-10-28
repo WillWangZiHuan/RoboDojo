@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "checked_unix": 1793190331.11281,
+  "same_fields": {
+    "instruction": true,
+    "original_user_text": true,
+    "instruction_normalization": true,
+    "reasoning_effort": true,
+    "system_prompt": true,
+    "simulator_ground_truth": true,
+    "native_curobo": true,
+    "vla": true,
+    "max_turns": true,
+    "max_actions": true,
+    "max_failures": true,
+    "model_timeout_seconds": true,
+    "demonstrations": true,
+    "personal_memory": true,
+    "transport_idle_recovery_seconds": true,
+    "auto_compact_token_limit": true
+  },
+  "fresh_context": true
+}
