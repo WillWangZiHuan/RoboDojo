@@ -1,0 +1,13 @@
+{
+  "status": "interrupted",
+  "actions": 7650,
+  "physics_steps": 15474,
+  "resets": 0,
+  "events": [
+    {
+      "event": "interrupted",
+      "reason": "input closed without submission"
+    }
+  ],
+  "submission": null
+}

@@ -134,3 +134,14 @@ python -m experiments.seven_blocks.render_agent_video /absolute/path/to/download
 ```
 
 生成三路原始录像的完整解码核验、含等待时间的头部视角现实时间录像，以及自动选择约 150 秒长度的倍速观看版。原始三路录像不裁剪；倍速版按明确倍率重采样，保留全程时间顺序。该探索性单次实验不证明模型能力上限，也不把自述满意当作外部评分。
+
+最终图像审计须读取该模型原生会话实际工具输出中的 `input_image`，逐张解码并比较本地观察图的 SHA-256；仅在桥接目录存在图像不能证明它进入了模型输入。恢复时若产生多个原生记录，可重复提供 `--rollout`。输出只含哈希、时间和相对路径，不导出隐藏推理或 base64：
+
+```bash
+python -m experiments.seven_blocks.audit_model_images \
+  --run /absolute/path/to/new_experiment_directory \
+  --rollout /absolute/path/to/native_rollout.jsonl \
+  --output /absolute/path/to/new_experiment_directory/model_visual_input_audit.json
+```
+
+旧 Astra 轮的完整中断归档见 [中断验收记录](acceptance/2026-10-28-astra-interrupted/README.md)。它与新持久架构下的三个模型轮次分别记录。

@@ -1,0 +1,13 @@
+{
+  "experiments/seven_blocks/manipulation.py": "f989ce1746d8fab77c538b3525d9c0605aed2dbe8573fbede969db255acc4b43",
+  "experiments/seven_blocks/run.py": "6f591dd7992d8e766c42de43042a9e77349d5956477a31a4db485757b5dcb4b4",
+  "experiments/seven_blocks/agent_bridge.py": "cf719f1cbd700b4d53b3d05075f68209e664aa9559fd276b4ca77f564881967f",
+  "experiments/seven_blocks/recording.py": "28e2be59e51afd94cd6d59113a6a041602303d4f628f225e8a9be877729452ac",
+  "experiments/seven_blocks/run_agent.py": "792f4a4882fed2d894b4c81d7a2a3ca182831e007dd0cb02281c6dfe6349a068",
+  "experiments/seven_blocks/protocol.py": "52257df700ad08a4ce69a76d34e009a00b9fe6acaa6964d3f43aa299fb373d55",
+  "experiments/seven_blocks/spatial_control.py": "72e5e7ba16f27e8382ab3f4092091ef832071d4d21c437d3501eda8a6596bcc3",
+  "experiments/seven_blocks/environment.py": "90e13638b65f114cf280c81cd3cc625902fa2e8960506e794bbbee99bc097765",
+  "experiments/seven_blocks/render_agent_video.py": "4d61aea5285eb3324a9fd51a13288c8d526b3916a56692240bac6c42b277684d",
+  "experiments/seven_blocks/verify_recordings.py": "55adeec8d14599fa25449d9d93828fef4104c22ef131e6aef5d9793fac96d870",
+  "experiments/seven_blocks/check_stdio.py": "123401f970e04a724f1f028fb7d9765c69ef638d784127ff42b806a7f8c61b98"
+}
