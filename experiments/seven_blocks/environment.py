@@ -39,6 +39,7 @@ class SevenBlocksEnv(TaskEnv):
         self.template_path = template_path
         self.layout = make_layout(json.loads(template_path.read_text()))
         self.episode = Episode()
+        self.physics_observer = None
         super().__init__(config, app)
         self.scene_manager.layout_manager.set_saved_layout(0, deepcopy(self.layout))
 
@@ -51,12 +52,21 @@ class SevenBlocksEnv(TaskEnv):
 
     def _restore_scene(self):
         self.robot_manager.reset()
+        # Native reset sets drive targets only. A scene reset must also
+        # restore measured joint positions/velocities before settling.
+        for robot in self.robot_manager.robot_key:
+            robot.write_joint_state_to_sim(robot.data.default_joint_pos.clone(),
+                                          robot.data.default_joint_vel.clone())
         self.scene_manager.apply_saved_poses([0])
-        self.robot_manager.set_origin_endpose()
-        self.robot_manager.set_robot_init_state()
         self._apply_colors()
         for _ in range(100):
             self.sim_step(render=False)
+        self.robot_manager.set_origin_endpose()
+        self.robot_manager.set_robot_init_state()
+        # Clear temporal render history after the reset's pose discontinuity.
+        from env.camera_manager.capture.render_sync import wait_for_latest_cameras
+
+        wait_for_latest_cameras(self, min_passes=20)
 
     def soft_reset(self, reason="agent requested scene reset"):
         """Explicit full-scene recovery, preserving history and action counts."""
@@ -98,7 +108,10 @@ class SevenBlocksEnv(TaskEnv):
                              "orientation_wxyz": np.asarray(orientation).tolist(),
                              "world_bounds": [vertices.min(axis=0).tolist(), vertices.max(axis=0).tolist()],
                              "rgb": list(COLORS[color])}
-        return {"blocks": blocks, "status": self.episode.status, "actions": self.episode.actions,
+        robots = {robot.arm_name: self.robot_manager.get_joint(robot)[0].tolist()
+                  for robot in self.robot_manager.robot_list}
+        return {"blocks": blocks, "robot_joints": robots,
+                "status": self.episode.status, "actions": self.episode.actions,
                 "physics_steps": self.episode.physics_steps, "resets": self.episode.resets}
 
     def control_template(self):
@@ -111,9 +124,14 @@ class SevenBlocksEnv(TaskEnv):
         if type(physics_steps) is not int or not 1 <= physics_steps <= 250:
             raise ValueError("Each command must contain 1..250 physics steps; commands may be repeated")
         validate_control(control, self.control_template())
+        control = deepcopy(control)
+        for values in control.values():
+            values.setdefault("velocity", [0.0] * len(values["position"]))
         for _ in range(physics_steps):
             self.step([MetaControl(control)])
             self.sim_step(render=False)
+            if self.physics_observer is not None:
+                self.physics_observer()
         self.robot_manager.control_manager.update_prev_control(0, MetaControl(control))
         self.episode.record_action(physics_steps)
 

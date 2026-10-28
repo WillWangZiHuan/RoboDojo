@@ -1,0 +1,26 @@
+{
+  "jobs": [
+    {
+      "job_id": 48788,
+      "purpose": "scene and reset smoke",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:01:21"
+    },
+    {
+      "job_id": 48805,
+      "purpose": "seven-block physical manipulation and video recording",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:16:56"
+    },
+    {
+      "job_id": 48806,
+      "purpose": "real JSONL subprocess interface",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:01:18"
+    }
+  ],
+  "source": "Slurm sacct on 2026-10-28"
+}

@@ -1,0 +1,13 @@
+{
+  "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+  "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+  "packages": {
+    "isaacsim": "5.1.0.0",
+    "isaaclab": "0.54.3",
+    "torch": "2.7.0+cu128",
+    "numpy": "1.26.0",
+    "imageio-ffmpeg": "0.6.0"
+  },
+  "template_sha256": "15e3dda8026818ab1a40fe9aeb26d56ecb81416b04e2c46c23927761501d6376",
+  "native_base_commit": "cc98349c3690209d00cf7b2e867b783a9cabc4c6"
+}

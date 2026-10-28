@@ -1,0 +1,393 @@
+{
+  "passed": true,
+  "model_calls": 0,
+  "evaluator_geometry": true,
+  "synthetic_submission": false,
+  "checks": [
+    {
+      "color": "red",
+      "arm": "left_arm",
+      "initial_center": [
+        -0.2999545633792877,
+        -0.13999289646744728,
+        0.7825000286102295
+      ],
+      "target_center": [
+        -0.2999545633792877,
+        -0.2199928964674473,
+        0.7825000286102295
+      ],
+      "grasp_tilt_degrees": 0.0,
+      "initial_robot_joints": {
+        "left_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "passed": true,
+      "lift_height_m": 0.07998655796051024,
+      "final_center": [
+        -0.30042150616645813,
+        -0.22001317143440247,
+        0.7824999690055847
+      ],
+      "placement_xy_error_m": 0.00046738275618116696,
+      "table_gap_m": -7.390975953480705e-08,
+      "recording": {
+        "timebase": "simulation",
+        "fps": 25.0,
+        "frames": 280,
+        "physics_steps": 2796,
+        "duration_seconds": 11.200000000000001,
+        "planning_wall_time_included": false,
+        "videos": [
+          "cam_head.mp4",
+          "cam_left_wrist.mp4",
+          "cam_right_wrist.mp4"
+        ]
+      }
+    },
+    {
+      "color": "orange",
+      "arm": "left_arm",
+      "initial_center": [
+        -0.09995456039905548,
+        -0.13999289274215698,
+        0.7825000286102295
+      ],
+      "target_center": [
+        -0.09995456039905548,
+        -0.219992892742157,
+        0.7825000286102295
+      ],
+      "grasp_tilt_degrees": 0.0,
+      "initial_robot_joints": {
+        "left_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "passed": true,
+      "lift_height_m": 0.07998184919357298,
+      "final_center": [
+        -0.10037796944379807,
+        -0.22000449895858765,
+        0.7825000286102295
+      ],
+      "placement_xy_error_m": 0.00042356808594329055,
+      "table_gap_m": -1.4305114759416426e-08,
+      "recording": {
+        "timebase": "simulation",
+        "fps": 25.0,
+        "frames": 282,
+        "physics_steps": 2816,
+        "duration_seconds": 11.28,
+        "planning_wall_time_included": false,
+        "videos": [
+          "cam_head.mp4",
+          "cam_left_wrist.mp4",
+          "cam_right_wrist.mp4"
+        ]
+      }
+    },
+    {
+      "color": "yellow",
+      "arm": "right_arm",
+      "initial_center": [
+        0.10004544258117676,
+        -0.13999289274215698,
+        0.7825000286102295
+      ],
+      "target_center": [
+        0.10004544258117676,
+        -0.219992892742157,
+        0.7825000286102295
+      ],
+      "grasp_tilt_degrees": 0.0,
+      "initial_robot_joints": {
+        "left_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "passed": true,
+      "lift_height_m": 0.07998101472854613,
+      "final_center": [
+        0.09966821223497391,
+        -0.21999262273311615,
+        0.7825000286102295
+      ],
+      "placement_xy_error_m": 0.0003772304428346213,
+      "table_gap_m": -1.4305114759416426e-08,
+      "recording": {
+        "timebase": "simulation",
+        "fps": 25.0,
+        "frames": 282,
+        "physics_steps": 2816,
+        "duration_seconds": 11.28,
+        "planning_wall_time_included": false,
+        "videos": [
+          "cam_head.mp4",
+          "cam_left_wrist.mp4",
+          "cam_right_wrist.mp4"
+        ]
+      }
+    },
+    {
+      "color": "green",
+      "arm": "right_arm",
+      "initial_center": [
+        0.3000454604625702,
+        -0.13999289646744728,
+        0.7825000286102295
+      ],
+      "target_center": [
+        0.3000454604625702,
+        -0.2199928964674473,
+        0.7825000286102295
+      ],
+      "grasp_tilt_degrees": 0.0,
+      "initial_robot_joints": {
+        "left_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "passed": true,
+      "lift_height_m": 0.07998655796051024,
+      "final_center": [
+        0.2995782494544983,
+        -0.22001324594020844,
+        0.7824999690055847
+      ],
+      "placement_xy_error_m": 0.00046765396085697466,
+      "table_gap_m": -7.390975953480705e-08,
+      "recording": {
+        "timebase": "simulation",
+        "fps": 25.0,
+        "frames": 280,
+        "physics_steps": 2796,
+        "duration_seconds": 11.200000000000001,
+        "planning_wall_time_included": false,
+        "videos": [
+          "cam_head.mp4",
+          "cam_left_wrist.mp4",
+          "cam_right_wrist.mp4"
+        ]
+      }
+    },
+    {
+      "color": "blue",
+      "arm": "left_arm",
+      "initial_center": [
+        -0.1999545693397522,
+        0.04000711068511009,
+        0.7825000286102295
+      ],
+      "target_center": [
+        -0.1999545693397522,
+        -0.03999288931488991,
+        0.7825000286102295
+      ],
+      "grasp_tilt_degrees": 29.999999999999996,
+      "initial_robot_joints": {
+        "left_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "passed": true,
+      "lift_height_m": 0.07995562314987181,
+      "final_center": [
+        -0.1999959498643875,
+        -0.039593431167304516,
+        0.7825000286102295
+      ],
+      "placement_xy_error_m": 0.00040159576627679737,
+      "table_gap_m": -1.4305114759416426e-08,
+      "recording": {
+        "timebase": "simulation",
+        "fps": 25.0,
+        "frames": 284,
+        "physics_steps": 2836,
+        "duration_seconds": 11.36,
+        "planning_wall_time_included": false,
+        "videos": [
+          "cam_head.mp4",
+          "cam_left_wrist.mp4",
+          "cam_right_wrist.mp4"
+        ]
+      }
+    },
+    {
+      "color": "purple",
+      "arm": "right_arm",
+      "initial_center": [
+        4.543829709291458e-05,
+        0.04000711068511009,
+        0.7825000286102295
+      ],
+      "target_center": [
+        4.543829709291458e-05,
+        -0.03999288931488991,
+        0.7825000286102295
+      ],
+      "grasp_tilt_degrees": 29.999999999999996,
+      "initial_robot_joints": {
+        "left_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "passed": true,
+      "lift_height_m": 0.0799459671974182,
+      "final_center": [
+        2.455059438943863e-05,
+        -0.03960203751921654,
+        0.7825000286102295
+      ],
+      "placement_xy_error_m": 0.00039140953272158327,
+      "table_gap_m": -1.4305114759416426e-08,
+      "recording": {
+        "timebase": "simulation",
+        "fps": 25.0,
+        "frames": 290,
+        "physics_steps": 2896,
+        "duration_seconds": 11.6,
+        "planning_wall_time_included": false,
+        "videos": [
+          "cam_head.mp4",
+          "cam_left_wrist.mp4",
+          "cam_right_wrist.mp4"
+        ]
+      }
+    },
+    {
+      "color": "white",
+      "arm": "right_arm",
+      "initial_center": [
+        0.20004543662071228,
+        0.04000711068511009,
+        0.7825000286102295
+      ],
+      "target_center": [
+        0.20004543662071228,
+        -0.03999288931488991,
+        0.7825000286102295
+      ],
+      "grasp_tilt_degrees": 29.999999999999996,
+      "initial_robot_joints": {
+        "left_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "right_arm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "passed": true,
+      "lift_height_m": 0.07995496749877928,
+      "final_center": [
+        0.20001190900802612,
+        -0.0395964989438653,
+        0.7825000286102295
+      ],
+      "placement_xy_error_m": 0.00039780576548544537,
+      "table_gap_m": -1.4305114759416426e-08,
+      "recording": {
+        "timebase": "simulation",
+        "fps": 25.0,
+        "frames": 284,
+        "physics_steps": 2836,
+        "duration_seconds": 11.36,
+        "planning_wall_time_included": false,
+        "videos": [
+          "cam_head.mp4",
+          "cam_left_wrist.mp4",
+          "cam_right_wrist.mp4"
+        ]
+      }
+    }
+  ]
+}

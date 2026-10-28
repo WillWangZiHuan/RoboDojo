@@ -55,17 +55,21 @@ def check_scene(snapshot, table):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=("preview", "smoke", "stdio"), default="preview")
+    parser.add_argument("--mode", choices=("preview", "smoke", "manipulation", "stdio"), default="preview")
     parser.add_argument("--output", type=Path, required=True, help="New directory; never overwrite a prior run")
     parser.add_argument("--template", type=Path, help="Native stack_blocks layout JSON override")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--preview-steps", type=int, default=250)
+    parser.add_argument("--colors", nargs="+", choices=list(COLORS),
+                        help="Run selected manipulation checks; default: all seven")
     from isaaclab.app import AppLauncher
 
     AppLauncher.add_app_launcher_args(parser)
     args = parser.parse_args()
     if args.preview_steps < 0:
         parser.error("--preview-steps must be nonnegative")
+    if args.colors and (args.mode != "manipulation" or len(set(args.colors)) != len(args.colors)):
+        parser.error("--colors requires manipulation mode and distinct colors")
     args.enable_cameras = True
     args.output.mkdir(parents=True, exist_ok=False)
     # Isaac writes logs to stdout. Reserve the original descriptor for JSONL.
@@ -145,9 +149,20 @@ def main():
                                        - np.asarray(second["blocks"][color]["position"]))
                 if drift > 0.005:
                     raise RuntimeError(f"Block did not settle: {color}, drift={drift}")
-            env.soft_reset("synthetic smoke reset")
-            check_scene(env.snapshot(), env.layout["Table"])
-            assert env.episode.actions == 1 and env.episode.resets == 1
+            # Move a wrist joint so the reset check cannot pass by holding still.
+            moved_control = json.loads(json.dumps(control))
+            arm_key = next(key for key in moved_control if "arm" in key)
+            moved_control[arm_key]["position"][-1] += 0.15
+            env.act(moved_control, 250)
+            moved_state = env.snapshot()
+            assert any(not np.allclose(moved_state["robot_joints"][arm], joints, atol=0.03)
+                       for arm, joints in first["robot_joints"].items()), "Reset probe did not move the robot"
+            env.soft_reset("synthetic smoke reset after wrist movement")
+            reset_state = env.snapshot()
+            check_scene(reset_state, env.layout["Table"])
+            for arm, joints in first["robot_joints"].items():
+                assert np.allclose(reset_state["robot_joints"][arm], joints, atol=0.003), arm
+            assert env.episode.actions == 2 and env.episode.resets == 1
             env.submit("Synthetic acceptance test", "Test the explicit submit interface")
             assert env.run_reward() == [1.0]
             try:
@@ -159,6 +174,14 @@ def main():
             observe()
             dump(args.output / "acceptance.json", {**report, "passed": True, "model_calls": 0,
                                                    "synthetic_submission": True})
+        elif args.mode == "manipulation":
+            from experiments.seven_blocks.manipulation import check_manipulation
+
+            report = check_manipulation(env, observe, record, args.output, args.colors or COLORS)
+            dump(args.output / "manipulation.json", report)
+            env.episode.interrupt("scripted manipulation check ended; no agent submission")
+            if not report["passed"]:
+                raise RuntimeError("Manipulation acceptance failed; see manipulation.json")
         elif args.mode == "preview":
             for _ in range(args.preview_steps):
                 env.sim_step()

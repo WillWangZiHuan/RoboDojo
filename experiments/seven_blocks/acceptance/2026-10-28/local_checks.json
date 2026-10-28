@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "commands": [
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_seven_blocks.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "test_interruption_is_never_submission (test_seven_blocks.SevenBlocksTests.test_interruption_is_never_submission) ... ok\ntest_invalid_commands_are_rejected (test_seven_blocks.SevenBlocksTests.test_invalid_commands_are_rejected) ... ok\ntest_retries_preserve_history_but_do_not_complete (test_seven_blocks.SevenBlocksTests.test_retries_preserve_history_but_do_not_complete) ... ok\ntest_scene_clones_one_asset_without_mutating_source (test_seven_blocks.SevenBlocksTests.test_scene_clones_one_asset_without_mutating_source) ... ok\ntest_submit_is_explicit_terminal_and_immutable (test_seven_blocks.SevenBlocksTests.test_submit_is_explicit_terminal_and_immutable) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+        "-m",
+        "compileall",
+        "-q",
+        "experiments/seven_blocks"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "bash",
+        "-n",
+        "experiments/seven_blocks/slurm.sh"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ]
+}

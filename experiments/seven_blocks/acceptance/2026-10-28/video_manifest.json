@@ -1,0 +1,279 @@
+{
+  "passed": true,
+  "video_count": 21,
+  "videos": [
+    {
+      "path": "videos/red/cam_head.mp4",
+      "bytes": 484757,
+      "sha256": "fcc5f1546ba1ce84fe0f65ebc5b167cc15632b16c2a768d25e1deecc4c6b15ba",
+      "frames": 280,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.2,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/red/cam_left_wrist.mp4",
+      "bytes": 1286100,
+      "sha256": "2e67dac123fb60941877ff70d3c7556c12a3cabc732ef21fa4e8282ff51aeb65",
+      "frames": 280,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.2,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/red/cam_right_wrist.mp4",
+      "bytes": 269653,
+      "sha256": "71f51ea315c332686c7c8d8ca66d240f4578f0ae9b578626fa6f89afeeaf532f",
+      "frames": 280,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.2,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/orange/cam_head.mp4",
+      "bytes": 532644,
+      "sha256": "35b772a77bc3ef44a3b2e3760f85876ae68cb47cfec4eb352de67ec151740c8d",
+      "frames": 282,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.28,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/orange/cam_left_wrist.mp4",
+      "bytes": 1301939,
+      "sha256": "3bc94fa019d4368995b5798e0ce5b55e67d26b1701873d63892b2a34d14a5a74",
+      "frames": 282,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.28,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/orange/cam_right_wrist.mp4",
+      "bytes": 234490,
+      "sha256": "5b8f48f3dd5d15ba1abc2625e532f6c35cb923e3a2e82a5e7322e6b9d5bac54b",
+      "frames": 282,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.28,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/yellow/cam_head.mp4",
+      "bytes": 530312,
+      "sha256": "d8d2af75df5b97b87afd442de48ce7e3e9cedfb0afbf6e5d474f082285d0019a",
+      "frames": 282,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.28,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/yellow/cam_left_wrist.mp4",
+      "bytes": 240938,
+      "sha256": "dd014989019ae37d2048fe748e26b5600d379dcfe917e130971c16f3eb21076c",
+      "frames": 282,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.28,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/yellow/cam_right_wrist.mp4",
+      "bytes": 1327594,
+      "sha256": "dd169f3119526be34ea6ce149de0e8ac42ad66cf513b3a9d15859b361354fd09",
+      "frames": 282,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.28,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/green/cam_head.mp4",
+      "bytes": 452582,
+      "sha256": "d03b42f741f31748c555eb917bfaa15d363f298ad484d955406b485a15d58331",
+      "frames": 280,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.2,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/green/cam_left_wrist.mp4",
+      "bytes": 231962,
+      "sha256": "e9c24a41c0831342da11e25cb7daea0c8d62085d2218a2d0d754f4249f4c83d6",
+      "frames": 280,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.2,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/green/cam_right_wrist.mp4",
+      "bytes": 1285724,
+      "sha256": "8a641d0454f3135e94060e3f4b074dc8251173e576056372c05d8da12cc89f4e",
+      "frames": 280,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.2,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/blue/cam_head.mp4",
+      "bytes": 530739,
+      "sha256": "b83d5ff8c708181dae4a71f47f792107afa66b6f51a3cbfe291c33f31c94ecc9",
+      "frames": 284,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.36,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/blue/cam_left_wrist.mp4",
+      "bytes": 1194958,
+      "sha256": "c0ef9b0172d77056accf8b09ade732b59760000e42f45a646740b81b210ef581",
+      "frames": 284,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.36,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/blue/cam_right_wrist.mp4",
+      "bytes": 238576,
+      "sha256": "7b23d97ce6f90364d1a22fd4c680445bfb90ff2cc1e90dfd94a14f6a1bf7788c",
+      "frames": 284,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.36,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/purple/cam_head.mp4",
+      "bytes": 574948,
+      "sha256": "34fb1859803931fe3d067a461d612f5efe88a68890ba8cb94b6b0b20a1baf253",
+      "frames": 290,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.6,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/purple/cam_left_wrist.mp4",
+      "bytes": 269345,
+      "sha256": "e512b7d08da891a7f0aaa0a18a146f6576585d9f7ab963ef183c5813ae8241f2",
+      "frames": 290,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.6,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/purple/cam_right_wrist.mp4",
+      "bytes": 1240305,
+      "sha256": "0e66fcbcdc0ec4bf8bf2cb9ba070e66d5d93bf1520b40da8fefaa8c839571c10",
+      "frames": 290,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.6,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/white/cam_head.mp4",
+      "bytes": 504800,
+      "sha256": "c813c08256c0084a5b4805ebb687c9e315ade54f4994aaccdbfa57e217cae789",
+      "frames": 284,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.36,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/white/cam_left_wrist.mp4",
+      "bytes": 235652,
+      "sha256": "ef8a35e18028044ddcb2d8a0359f361daffba41e02e212dcaeb03ab8649828c1",
+      "frames": 284,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.36,
+      "full_decode_passed": true
+    },
+    {
+      "path": "videos/white/cam_right_wrist.mp4",
+      "bytes": 1195186,
+      "sha256": "57c8b61c926ee37260f9fc4bce03c68d5aba578e611e9026ba5a87e66d1a0121",
+      "frames": 284,
+      "fps": 25.0,
+      "size": [
+        640,
+        480
+      ],
+      "duration_seconds": 11.36,
+      "full_decode_passed": true
+    }
+  ]
+}

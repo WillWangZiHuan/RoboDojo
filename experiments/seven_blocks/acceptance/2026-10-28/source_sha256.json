@@ -1,0 +1,10 @@
+{
+  "experiments/seven_blocks/check_stdio.py": "123401f970e04a724f1f028fb7d9765c69ef638d784127ff42b806a7f8c61b98",
+  "experiments/seven_blocks/environment.py": "dd54fbfae364141d6cce8f420d118b7725129cd16047b2fbf1d32c731002baa0",
+  "experiments/seven_blocks/manipulation.py": "f989ce1746d8fab77c538b3525d9c0605aed2dbe8573fbede969db255acc4b43",
+  "experiments/seven_blocks/protocol.py": "52257df700ad08a4ce69a76d34e009a00b9fe6acaa6964d3f43aa299fb373d55",
+  "experiments/seven_blocks/recording.py": "28e2be59e51afd94cd6d59113a6a041602303d4f628f225e8a9be877729452ac",
+  "experiments/seven_blocks/run.py": "173cf8b2ba2898df1d385590bed32c3ad42ae936946d525ba330b52847ff9e91",
+  "experiments/seven_blocks/verify_recordings.py": "55adeec8d14599fa25449d9d93828fef4104c22ef131e6aef5d9793fac96d870",
+  "experiments/seven_blocks/slurm.sh": "b0fd39e28fbb2b73dd25f17ab5b59bbaf8ff9e711f5c213f8c79073bff36b0ed"
+}
