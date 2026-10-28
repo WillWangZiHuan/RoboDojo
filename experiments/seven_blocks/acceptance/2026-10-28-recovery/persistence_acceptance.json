@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checked_unix": 1793175388.701946,
+  "same_state_fields": {
+    "blocks": true,
+    "robot_joints": true,
+    "status": true,
+    "actions": true,
+    "physics_steps": true,
+    "resets": true,
+    "robot_tcp": true,
+    "tabletop_z": true
+  },
+  "same_batch_job": "48918",
+  "actions": 0,
+  "physics_steps": 0,
+  "resets": 0,
+  "local_bridge_was_killed": true,
+  "simulator_survived": true
+}

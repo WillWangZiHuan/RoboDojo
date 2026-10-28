@@ -22,48 +22,35 @@ SSH = ["ssh", "-o", "BatchMode=yes", "-o", "ConnectTimeout=30", "-o",
 
 
 class Session:
-    def __init__(self, output):
+    def __init__(self, output, reattach_from=None):
+        from batch_transport import BatchTransport
+
         self.output = Path(output).resolve()
         self.output.mkdir(parents=True, exist_ok=False)
-        self.remote_output = ROOT + "/seven_blocks_code/eval_result/seven_blocks/" + self.output.parent.name + "_" + self.output.name
         self.log = (self.output / "transport.log").open("w")
         self.journal = (self.output / "rpc.jsonl").open("w")
         self.index = 0
         self.ended = False
-        command = ["srun", "--partition=RTX3090", "--nodelist=node01", "--nodes=1", "--ntasks=1",
-                   "--cpus-per-task=8", "--mem=48G", "--gres=gpu:3090:1", "--time=3-00:00:00",
-                   "--job-name=seven-" + self.output.parent.name[-30:], "--kill-on-bad-exit=1",
-                   "python", "-u", "-m", "experiments.seven_blocks.run", "--mode", "stdio",
-                   "--headless", "--agent-tools", "--record-video", "--output", self.remote_output]
-        shell = "source " + shlex.quote(ROOT + "/control/activate.sh") + " && cd " + shlex.quote(ROOT + "/seven_blocks_code") + " && exec " + shlex.join(command)
-        self.process = subprocess.Popen([*SSH, shell], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                        stderr=self.log, text=True, bufsize=1)
-        self.current = self.read()
-        assert self.current["event"] == "ready", self.current
-        (self.output / "allocation.json").write_text(json.dumps({
-            "job_id": self.current["slurm_job_id"], "remote_output": self.remote_output,
-            "host": HOST, "infrastructure_walltime_seconds": 259200,
-            "agent_action_limit": None, "agent_failure_limit": None,
-        }, indent=2) + "\n")
-        self.save({"event": "ready", "response": self.current})
+        remote = ROOT + "/seven_blocks_code/eval_result/seven_blocks/" + self.output.parent.name + "_" + self.output.name
+        previous = Path(reattach_from).resolve() if reattach_from else None
+        self.transport = BatchTransport(self.output, SSH, ROOT, remote, self.log, previous)
+        self.remote_output = self.transport.allocation["remote_output"]
+        self.current = self.transport.state["response"]
+        if self.current is None:
+            self.current = self.transport.exchange()
+            assert self.current["event"] == "ready", self.current
+        self.ended = self.current.get("status") in ("submitted", "interrupted")
+        self.save({"event": "reattached" if previous else "ready", "response": self.current})
 
     def save(self, value):
         self.journal.write(json.dumps({"wall_unix": time.time(), **value}, ensure_ascii=False) + "\n")
         self.journal.flush()
 
-    def read(self):
-        line = self.process.stdout.readline()
-        if not line:
-            raise RuntimeError("Simulator stream ended; inspect transport.log")
-        return json.loads(line)
-
     def call(self, request):
         if self.ended:
             return self.current
         self.save({"event": "request", "request": request, "index": self.index})
-        self.process.stdin.write(json.dumps(request, ensure_ascii=False) + "\n")
-        self.process.stdin.flush()
-        self.current = self.read()
+        self.current = self.transport.exchange(request)
         self.save({"event": "response", "response": self.current, "index": self.index})
         if self.current.get("status") in ("submitted", "interrupted"):
             self.ended = True
@@ -91,11 +78,8 @@ class Session:
         return result
 
     def close(self):
-        if self.process.poll() is None:
-            if not self.ended:
-                self.call({"op": "stop", "reason": "agent transport closed without explicit submission"})
-            self.process.stdin.close()
-            self.process.wait(timeout=180)
+        # Local transport lifetime never owns the simulator. Only explicit
+        # submit/stop or the Slurm infrastructure walltime ends the batch job.
         self.journal.close()
         self.log.close()
 
@@ -104,7 +88,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--reattach-from", type=Path,
+                        help="Attach to the same live simulator using a previous bridge's evidence")
+    parser.add_argument("--transport", choices=("stdio", "streamable-http"), default="stdio")
+    parser.add_argument("--port", type=int, default=8769)
     args = parser.parse_args()
+    if args.reattach_from and (args.check or args.transport != "streamable-http"):
+        parser.error("Reattachment requires the persistent streamable-http server, without --check")
     if args.check:
         session = Session(args.output)
         try:
@@ -128,7 +118,7 @@ def main():
         finally:
             session.close()
         return
-    mcp = FastMCP("seven_blocks")
+    mcp = FastMCP("seven_blocks", host="127.0.0.1", port=args.port)
     holder = []
     lock = threading.Lock()
 
@@ -157,7 +147,7 @@ def main():
         """
         with lock:
             if not holder:
-                holder.append(Session(args.output))
+                holder.append(Session(args.output, args.reattach_from))
             session = holder[0]
             if request.get("op") == "stop":
                 return [TextContent(type="text",text="stop is an operator-only interruption; use submit when satisfied")]
@@ -169,7 +159,7 @@ def main():
 
     atexit.register(close)
     try:
-        mcp.run(transport="stdio")
+        mcp.run(transport=args.transport)
     finally:
         close()
         atexit.unregister(close)

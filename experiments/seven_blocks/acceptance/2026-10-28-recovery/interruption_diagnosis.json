@@ -1,0 +1,8 @@
+{
+  "wall_unix": 1793174361.778935,
+  "status": "interrupted",
+  "submission": false,
+  "physical_job": 48825,
+  "reason": "Original Slurm allocation closed when the original client process chain ended during transport recovery. Read-only state comparison had passed earlier, but allocation lifetime was not independent.",
+  "next_action": "Archive full videos and metadata; verify persistent simulator survives client exit before a fresh Astra attempt."
+}

@@ -102,23 +102,34 @@ python -m experiments.seven_blocks.verify_recordings /path/to/manipulation_run
 
 ## 自主展示（2026-10-28 接入）
 
-用户选定 GPT-6 Astra + 原生 cuRobo，允许读取方块真实坐标。`run_agent.py` 启动本机已登录的 Codex CLI，模型仅能调用独立 `seven_blocks.robot` MCP 工具。用户提示词沿用本文原句；系统说明只解释接口、观察/重试/提交语义，不给目标结构或作品示范。CLI 不设置模型轮数、动作次数或失败次数上限，环境只在 agent 的 `submit` 后记录自主提交。进程结束而未提交仍为中断。
+用户选定 GPT-6 Astra + 原生 cuRobo，允许读取方块真实坐标；后续要求 GPT-6 Sol 和 GPT-6.1 Terra 在相同场景和指令下各独立运行一次。`run_agent.py` 启动本机已登录的 Codex CLI，模型仅能调用独立 `seven_blocks.robot` MCP 工具。用户提示词沿用本文原句；系统说明只解释接口、观察/重试/提交语义，不给目标结构或作品示范。CLI 不设置模型轮数、动作次数或失败次数上限，环境只在 agent 的 `submit` 后记录自主提交。进程结束而未提交仍为中断。
 
-`agent_bridge.py` 通过 SSH 在独立 Slurm GPU 作业运行仿真，不在登录节点执行 Isaac。分区的 72 小时作业时限属于基础设施限制，达到后必须记为中断。模型与仿真都保留独立日志；模型对话不读取前述抓放验收结果。只有本次机器人 MCP 工具在启动参数中预先许可；其他工具、个人记忆和项目文档读取均不开放。
+`agent_bridge.py` 通过 SSH 提交独立 Slurm 批处理作业，不在登录节点执行 Isaac。批处理进程以 O_RDWR 持有请求 FIFO，回复写入持久 JSONL 文件；本地模型或桥接退出不会关闭仿真输入。分区的 72 小时作业时限属于基础设施限制，达到后必须记为中断。模型与仿真都保留独立日志；模型对话不读取前述抓放验收结果。只有本次机器人 MCP 工具在启动参数中预先许可；其他工具、个人记忆和项目文档读取均不开放。
 
 工具提供 `move`（任意 TCP 位置/姿态的 cuRobo 规划）、`gripper`、`wait`、原生 `act`、`observe`、显式 `reset` 和 `submit`。每次工具调用后给模型返回真实结果、状态及三张当前 RGB 图像。规划失败不会自动重置或偷偷重试；后续行为由模型决定。
 
-在有 `mcp` 依赖的本机 Python 环境，从仓库根目录启动：
+在有 `mcp` 依赖的本机 Python 环境，从仓库根目录分别启动桥接和模型控制器。长期运行时，两者都必须用独立会话启动（例如 Python `Popen(..., start_new_session=True)`），并把 stdout/stderr 写入该次目录，不依赖临时工具会话：
 
 ```bash
+python experiments/seven_blocks/agent_bridge.py \
+  --transport streamable-http --port 8773 \
+  --output /absolute/path/to/new_experiment_directory/bridge
+
 python -m experiments.seven_blocks.run_agent \
-  --codex /absolute/path/to/codex \
-  --output /absolute/path/to/new_experiment_directory
+  --codex /absolute/path/to/codex --model gpt-6-astra \
+  --bridge-url http://127.0.0.1:8773/mcp \
+  --bridge-output /absolute/path/to/new_experiment_directory/bridge \
+  --output /absolute/path/to/new_experiment_directory/model
 ```
 
-`condition.json` 冻结完整指令与 CLI 参数；`agent_events.jsonl` 保存模型公开输出与工具事件；`bridge/rpc.jsonl` 保存实际请求/反馈；`bridge/allocation.json` 给出唯一远程输出目录。下载整个远程目录后运行：
+`--model` 也可选择 `gpt-6-sol`、`gpt-6.1-terra`。每模型使用独立新目录和初始环境，不能把上一个模型的历史传入下一模型。默认 600 秒无事件且无未完成物理请求时恢复原模型 thread，60,000 tokens 时进行原生上下文压缩；这是需披露的运行条件，不是动作或失败次数上限。完整恢复步骤与限制见 [RECOVERY.md](RECOVERY.md)。
+
+`condition.json` 冻结完整指令与 CLI 参数；`agent_events.jsonl` 保存模型公开输出与工具事件；`bridge/rpc.jsonl` 保存实际请求/反馈；`bridge/allocation.json` 给出唯一远程输出目录。物理作业已提交或中断后，先收集全部录像与缺少的相机图，再制作观看版：
 
 ```bash
+python -m experiments.seven_blocks.collect_run \
+  --bridge /absolute/path/to/new_experiment_directory/bridge \
+  --output /absolute/path/to/downloaded_simulation
 python -m experiments.seven_blocks.render_agent_video /absolute/path/to/downloaded_simulation
 ```
 
