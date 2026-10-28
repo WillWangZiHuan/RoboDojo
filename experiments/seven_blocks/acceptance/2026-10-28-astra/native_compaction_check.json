@@ -1,0 +1,34 @@
+{
+  "scope": "Native compaction metadata and later robot RPC evidence; compacted contents are not exported",
+  "compactions": [
+    {
+      "timestamp": "2026-10-28T08:49:40.605Z",
+      "prior_nonzero_input": {
+        "timestamp": "2026-10-28T08:47:29.212Z",
+        "input_tokens": 58348
+      },
+      "first_nonzero_input_after": {
+        "timestamp": "2026-10-28T08:50:17.507Z",
+        "input_tokens": 16173
+      },
+      "later_robot_requests": 59,
+      "later_robot_responses": 59
+    },
+    {
+      "timestamp": "2026-10-28T09:50:23.847Z",
+      "prior_nonzero_input": {
+        "timestamp": "2026-10-28T09:48:24.189Z",
+        "input_tokens": 57544
+      },
+      "first_nonzero_input_after": {
+        "timestamp": "2026-10-28T09:51:21.258Z",
+        "input_tokens": 16169
+      },
+      "later_robot_requests": 13,
+      "later_robot_responses": 13
+    }
+  ],
+  "model_thread": "01a18196-e90e-7291-8fa6-aae71b003dd1",
+  "status": "submitted",
+  "transport_recoveries": 0
+}

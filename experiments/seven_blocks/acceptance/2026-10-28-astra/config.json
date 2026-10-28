@@ -1,0 +1,203 @@
+{
+  "sim": {
+    "decimation": 1,
+    "dt": 0.004,
+    "render_interval": 10,
+    "scene": {
+      "num_envs": 1,
+      "env_spacing": 7
+    },
+    "seed": [
+      0
+    ]
+  },
+  "scene": {
+    "Room": {
+      "default": "Simple_Room_nolight",
+      "default_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "default_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "Table": {
+      "default": "material_0122",
+      "scale": [
+        1.4,
+        1.1,
+        0.05
+      ],
+      "default_pos": [
+        0.0,
+        -0.05,
+        0.74
+      ],
+      "default_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "Background": {
+      "intensity": 1000,
+      "default": "brown_photostudio_02_4k.hdr"
+    },
+    "Ground": {
+      "geometry": "cube",
+      "thickness": 0.1,
+      "axis": "Z",
+      "default_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materials": {
+        "type": "mdl",
+        "default": "material_0564"
+      },
+      "physics_material": {
+        "static_friction": 1.0,
+        "dynamic_friction": 1.0,
+        "restitution": 0.0,
+        "friction_combine_mode": "multiply",
+        "restitution_combine_mode": "multiply",
+        "compliant_contact_stiffness": 0.0,
+        "compliant_contact_damping": 0.0
+      }
+    }
+  },
+  "robot": {
+    "robots": [
+      {
+        "robot_type": "arm",
+        "robot_name": "x5",
+        "coupled": false,
+        "default_root_pos": [
+          -0.3,
+          -0.45,
+          0.765
+        ],
+        "default_root_rot": [
+          0.707,
+          0,
+          0,
+          0.707
+        ],
+        "grasp_perfect_direction": "top_down_little_right"
+      },
+      {
+        "robot_type": "arm",
+        "robot_name": "x5",
+        "coupled": false,
+        "default_root_pos": [
+          0.3,
+          -0.45,
+          0.765
+        ],
+        "default_root_rot": [
+          0.707,
+          0,
+          0,
+          0.707
+        ],
+        "grasp_perfect_direction": "top_down_little_left"
+      }
+    ]
+  },
+  "camera": {
+    "annotator": {
+      "common": {
+        "enabled": true,
+        "rgb_capture": {
+          "type": "rgb",
+          "device": "cpu"
+        }
+      },
+      "cam_head": {
+        "enabled": true,
+        "rgb_capture": {
+          "type": "rgb",
+          "device": "cpu"
+        }
+      },
+      "cam_left_wrist": {
+        "enabled": true,
+        "rgb_capture": {
+          "type": "rgb",
+          "device": "cpu"
+        }
+      },
+      "cam_right_wrist": {
+        "enabled": true,
+        "rgb_capture": {
+          "type": "rgb",
+          "device": "cpu"
+        }
+      }
+    },
+    "cam_head": {
+      "camera": {
+        "type": "Gemini_345Lg",
+        "mesh": "pinhole",
+        "pos": [
+          0.0,
+          -0.41,
+          1.308
+        ],
+        "ori": [
+          30.0,
+          0,
+          0
+        ]
+      }
+    },
+    "default_frequency": 25,
+    "cam_left_wrist": {
+      "camera": {
+        "mount_link": "robot0/camera",
+        "pos": [
+          0,
+          0,
+          0.001
+        ],
+        "ori": [
+          0,
+          -80,
+          -90
+        ],
+        "type": "d435",
+        "mesh": "pinhole"
+      }
+    },
+    "cam_right_wrist": {
+      "camera": {
+        "mount_link": "robot1/camera",
+        "pos": [
+          0,
+          0,
+          0.001
+        ],
+        "ori": [
+          0,
+          -80,
+          -90
+        ],
+        "type": "d435",
+        "mesh": "pinhole"
+      }
+    }
+  },
+  "task_env": {}
+}

@@ -28,6 +28,12 @@
 
 若模型控制器本身消失，应从 `process.json` 和原生会话记录核对 thread ID，确认旧客户端退出、写入锁释放后再续接。不要删除线程锁、同时启动两个控制器或用另一个作品替代原目标。若桥接消失但批处理作业仍存活，通过 `--reattach-from` 接回原控制目录，并核对实际场景。
 
+## 启动时等待 Slurm 分配
+
+首次机器人 MCP 调用可能已经开始，但仿真仍在 Slurm 队列中，桥接尚未写入 ready 或 RPC 请求。此时不能把空 RPC 日志判为模型空闲。`run_agent.py` 同时匹配原生 CLI 的 `item.started` / `item.completed` 机器人 MCP 调用 ID；任一调用未完成，就不执行静默重启。`check_recovery.py` 覆盖无 RPC 的首次 MCP 等待、已进入 RPC 的物理请求等待，以及回复完成后的静默恢复。
+
+Sol 的 48999 作业实际遇到 `PENDING (Priority)`。这是资源调度等待，应保留队列位置，不当作网络故障，不重复提交作业。修复发生时旧版监督进程已经加载，因此仅暂时挂起该监督进程，模型客户端和桥接继续运行；独立维护监视器在桥接 ready 或模型退出后自动恢复监督进程。该次维护完整记录于 `sol_20261028_001/startup_guard_maintenance.json`，没有暂停模型、重置环境或改变原始指令。新启动的控制器直接使用上述未完成 MCP 判断，不需要这项运行中维护。
+
 ## 本次失败恢复的边界
 
 旧版本使用 SSH+srun stdio，把仿真输入寿命与本地进程链绑定。尝试 sattach 时，旧 stdout 会回放且首行可能截断；只读接管曾证明场景一致。但是结束旧模型进程后，原仿真仍收到 EOF 并关闭。原 Slurm 48825 虽以 0:0 退出，`episode.json` 明确是 `interrupted`，原因为 `input closed without submission`，不能计为主动提交。

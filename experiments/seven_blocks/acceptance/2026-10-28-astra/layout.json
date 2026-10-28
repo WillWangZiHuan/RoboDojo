@@ -1,0 +1,432 @@
+{
+  "Table": {
+    "default": "material_0122",
+    "scale": [
+      1.4,
+      1.1,
+      0.05
+    ],
+    "default_pos": [
+      0.0,
+      -0.05,
+      0.74
+    ],
+    "default_ori": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Room": {
+    "default": "Simple_Room_nolight",
+    "default_pos": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "default_rot": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "Ground": {
+    "geometry": "cube",
+    "thickness": 0.1,
+    "axis": "Z",
+    "default_pos": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "materials": {
+      "type": "mdl",
+      "default": "material_0564",
+      "random": false
+    },
+    "physics_material": {
+      "static_friction": 1.0,
+      "dynamic_friction": 1.0,
+      "restitution": 0.0,
+      "friction_combine_mode": "multiply",
+      "restitution_combine_mode": "multiply",
+      "compliant_contact_stiffness": 0.0,
+      "compliant_contact_damping": 0.0
+    }
+  },
+  "Rigid": {
+    "block": [
+      {
+        "category": "block",
+        "category_idx": 6,
+        "group": "size1",
+        "xlim": [
+          -0.45,
+          0.45
+        ],
+        "ylim": [
+          -0.25,
+          0.0
+        ],
+        "zlim": null,
+        "qpos": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "rotate_deg": 0,
+        "rotate_rand": false,
+        "relative_plane": "Table",
+        "place_tag": null,
+        "margin": 0.01,
+        "check_mode": "bbox",
+        "need_check_stable": true,
+        "label": "block_red",
+        "default_pos": [
+          -0.3,
+          -0.14,
+          0.7824999394501048
+        ],
+        "default_ori": [
+          0.9999991350011223,
+          0.00019999982700022448,
+          -0.001299998875501459,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "physics": {
+          "type": "rigid",
+          "mass": 0.05,
+          "static_friction": 0.8,
+          "dynamic_friction": 0.6,
+          "restitution": 0.0
+        },
+        "visual": {}
+      },
+      {
+        "category": "block",
+        "category_idx": 6,
+        "group": "size1",
+        "xlim": [
+          -0.45,
+          0.45
+        ],
+        "ylim": [
+          -0.25,
+          0.0
+        ],
+        "zlim": null,
+        "qpos": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "rotate_deg": 0,
+        "rotate_rand": false,
+        "relative_plane": "Table",
+        "place_tag": null,
+        "margin": 0.01,
+        "check_mode": "bbox",
+        "need_check_stable": true,
+        "label": "block_orange",
+        "default_pos": [
+          -0.1,
+          -0.14,
+          0.7824999394501048
+        ],
+        "default_ori": [
+          0.9999991350011223,
+          0.00019999982700022448,
+          -0.001299998875501459,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "physics": {
+          "type": "rigid",
+          "mass": 0.05,
+          "static_friction": 0.8,
+          "dynamic_friction": 0.6,
+          "restitution": 0.0
+        },
+        "visual": {}
+      },
+      {
+        "category": "block",
+        "category_idx": 6,
+        "group": "size1",
+        "xlim": [
+          -0.45,
+          0.45
+        ],
+        "ylim": [
+          -0.25,
+          0.0
+        ],
+        "zlim": null,
+        "qpos": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "rotate_deg": 0,
+        "rotate_rand": false,
+        "relative_plane": "Table",
+        "place_tag": null,
+        "margin": 0.01,
+        "check_mode": "bbox",
+        "need_check_stable": true,
+        "label": "block_yellow",
+        "default_pos": [
+          0.1,
+          -0.14,
+          0.7824999394501048
+        ],
+        "default_ori": [
+          0.9999991350011223,
+          0.00019999982700022448,
+          -0.001299998875501459,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "physics": {
+          "type": "rigid",
+          "mass": 0.05,
+          "static_friction": 0.8,
+          "dynamic_friction": 0.6,
+          "restitution": 0.0
+        },
+        "visual": {}
+      },
+      {
+        "category": "block",
+        "category_idx": 6,
+        "group": "size1",
+        "xlim": [
+          -0.45,
+          0.45
+        ],
+        "ylim": [
+          -0.25,
+          0.0
+        ],
+        "zlim": null,
+        "qpos": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "rotate_deg": 0,
+        "rotate_rand": false,
+        "relative_plane": "Table",
+        "place_tag": null,
+        "margin": 0.01,
+        "check_mode": "bbox",
+        "need_check_stable": true,
+        "label": "block_green",
+        "default_pos": [
+          0.3,
+          -0.14,
+          0.7824999394501048
+        ],
+        "default_ori": [
+          0.9999991350011223,
+          0.00019999982700022448,
+          -0.001299998875501459,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "physics": {
+          "type": "rigid",
+          "mass": 0.05,
+          "static_friction": 0.8,
+          "dynamic_friction": 0.6,
+          "restitution": 0.0
+        },
+        "visual": {}
+      },
+      {
+        "category": "block",
+        "category_idx": 6,
+        "group": "size1",
+        "xlim": [
+          -0.45,
+          0.45
+        ],
+        "ylim": [
+          -0.25,
+          0.0
+        ],
+        "zlim": null,
+        "qpos": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "rotate_deg": 0,
+        "rotate_rand": false,
+        "relative_plane": "Table",
+        "place_tag": null,
+        "margin": 0.01,
+        "check_mode": "bbox",
+        "need_check_stable": true,
+        "label": "block_blue",
+        "default_pos": [
+          -0.2,
+          0.04,
+          0.7824999394501048
+        ],
+        "default_ori": [
+          0.9999991350011223,
+          0.00019999982700022448,
+          -0.001299998875501459,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "physics": {
+          "type": "rigid",
+          "mass": 0.05,
+          "static_friction": 0.8,
+          "dynamic_friction": 0.6,
+          "restitution": 0.0
+        },
+        "visual": {}
+      },
+      {
+        "category": "block",
+        "category_idx": 6,
+        "group": "size1",
+        "xlim": [
+          -0.45,
+          0.45
+        ],
+        "ylim": [
+          -0.25,
+          0.0
+        ],
+        "zlim": null,
+        "qpos": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "rotate_deg": 0,
+        "rotate_rand": false,
+        "relative_plane": "Table",
+        "place_tag": null,
+        "margin": 0.01,
+        "check_mode": "bbox",
+        "need_check_stable": true,
+        "label": "block_purple",
+        "default_pos": [
+          0.0,
+          0.04,
+          0.7824999394501048
+        ],
+        "default_ori": [
+          0.9999991350011223,
+          0.00019999982700022448,
+          -0.001299998875501459,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "physics": {
+          "type": "rigid",
+          "mass": 0.05,
+          "static_friction": 0.8,
+          "dynamic_friction": 0.6,
+          "restitution": 0.0
+        },
+        "visual": {}
+      },
+      {
+        "category": "block",
+        "category_idx": 6,
+        "group": "size1",
+        "xlim": [
+          -0.45,
+          0.45
+        ],
+        "ylim": [
+          -0.25,
+          0.0
+        ],
+        "zlim": null,
+        "qpos": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "rotate_deg": 0,
+        "rotate_rand": false,
+        "relative_plane": "Table",
+        "place_tag": null,
+        "margin": 0.01,
+        "check_mode": "bbox",
+        "need_check_stable": true,
+        "label": "block_white",
+        "default_pos": [
+          0.2,
+          0.04,
+          0.7824999394501048
+        ],
+        "default_ori": [
+          0.9999991350011223,
+          0.00019999982700022448,
+          -0.001299998875501459,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "physics": {
+          "type": "rigid",
+          "mass": 0.05,
+          "static_friction": 0.8,
+          "dynamic_friction": 0.6,
+          "restitution": 0.0
+        },
+        "visual": {}
+      }
+    ]
+  }
+}

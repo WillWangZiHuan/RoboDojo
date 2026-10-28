@@ -137,6 +137,8 @@ python -m experiments.seven_blocks.render_agent_video /absolute/path/to/download
 
 最终图像审计须读取该模型原生会话实际工具输出中的 `input_image`，逐张解码并比较本地观察图的 SHA-256；仅在桥接目录存在图像不能证明它进入了模型输入。恢复时若产生多个原生记录，可重复提供 `--rollout`。输出只含哈希、时间和相对路径，不导出隐藏推理或 base64：
 
+三路相机均由机器人接口提供，但模型可以在原生工具编排代码中选择哪些图像进入视觉输入。因此“接口提供三路图像”不等于“每次调用都实际输入三张图”。报告须区分保存的相机图数量与原生实际输入图数量，并逐模型报告实际选择；不得根据调用次数直接乘三来估计视觉输入。
+
 ```bash
 python -m experiments.seven_blocks.audit_model_images \
   --run /absolute/path/to/new_experiment_directory \

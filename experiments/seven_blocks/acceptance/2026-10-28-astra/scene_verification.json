@@ -1,0 +1,169 @@
+{
+  "status": "submitted",
+  "name": "光谱之塔",
+  "submission": {
+    "op": "submit",
+    "description": "《光谱之塔》：七块方块全部叠成一座独立直立的七层扭转塔，由下至上为红、橙、黄、绿、蓝、紫、白。塔高约24.5厘米，相邻方形轮廓依次旋转约15度，六次旋转形成四分之一圈的螺旋视觉。各层中心对齐在同一竖轴附近，双臂均已撤开，夹爪打开，没有外部支撑。",
+    "reason": "七层均已实际放置并释放，通过图像和物理状态确认。双臂撤离后再静置250个物理步，七块仍保持叠放，最大中心位移约0.000144毫米。作品同时展示精确抓放、双臂协作、逐层姿态控制和稳定堆叠；我满意并提交。"
+  },
+  "submission_request_unix": 1793181727.331778,
+  "submission_response_unix": 1793181732.7933319,
+  "model_controller_to_submit_seconds": 6214.263436079025,
+  "model_controller_to_exit_seconds": 6273.978721141815,
+  "model_tool_requests": 81,
+  "model_tool_responses": 81,
+  "physics_steps": 23152,
+  "low_level_actions": 11353,
+  "resets": 0,
+  "planning_failures": [
+    {
+      "index": 16,
+      "request": {
+        "op": "move",
+        "arm": "left_arm",
+        "tcp": [
+          0,
+          -0.18,
+          1.05
+        ],
+        "tilt_degrees": 0,
+        "yaw_degrees": 15
+      }
+    },
+    {
+      "index": 17,
+      "request": {
+        "op": "move",
+        "arm": "left_arm",
+        "tcp": [
+          0,
+          -0.18,
+          1.005
+        ],
+        "tilt_degrees": 0,
+        "yaw_degrees": 15
+      }
+    },
+    {
+      "index": 52,
+      "request": {
+        "op": "move",
+        "arm": "left_arm",
+        "tcp": [
+          -0.19995,
+          0.04001,
+          0.86
+        ],
+        "tilt_degrees": 0,
+        "yaw_degrees": 0
+      }
+    }
+  ],
+  "height_above_table_m": 0.24498497009277342,
+  "blocks": [
+    {
+      "color": "red",
+      "position_m": [
+        0.00016114320897031575,
+        -0.3500056266784668,
+        0.7824994325637817
+      ],
+      "yaw_degrees": 0.02512537866685962,
+      "expected_outline_yaw_degrees": 0,
+      "square_outline_error_degrees": 0.025125378666857046,
+      "vertical_center_error_m": -5.674362182350734e-07
+    },
+    {
+      "color": "orange",
+      "position_m": [
+        0.00019686573068611324,
+        -0.34995120763778687,
+        0.817491352558136
+      ],
+      "yaw_degrees": 14.976850231137552,
+      "expected_outline_yaw_degrees": 15,
+      "square_outline_error_degrees": 0.023149768862445796,
+      "vertical_center_error_m": -8.647441864018113e-06
+    },
+    {
+      "color": "yellow",
+      "position_m": [
+        0.00013825131463818252,
+        -0.34987300634384155,
+        0.852491021156311
+      ],
+      "yaw_degrees": 30.03714612621116,
+      "expected_outline_yaw_degrees": 30,
+      "square_outline_error_degrees": 0.037146126211155206,
+      "vertical_center_error_m": -8.978843689000371e-06
+    },
+    {
+      "color": "green",
+      "position_m": [
+        8.082832937361673e-05,
+        -0.3499143719673157,
+        0.8874846696853638
+      ],
+      "yaw_degrees": 44.99916658902777,
+      "expected_outline_yaw_degrees": 45,
+      "square_outline_error_degrees": 0.000833410972227,
+      "vertical_center_error_m": -1.533031463618606e-05
+    },
+    {
+      "color": "blue",
+      "position_m": [
+        0.00014087982708588243,
+        -0.35008615255355835,
+        0.9224838018417358
+      ],
+      "yaw_degrees": -30.01939954634296,
+      "expected_outline_yaw_degrees": 60,
+      "square_outline_error_degrees": 0.019399546342953045,
+      "vertical_center_error_m": -1.6198158264146834e-05
+    },
+    {
+      "color": "purple",
+      "position_m": [
+        0.0001377910521114245,
+        -0.350117951631546,
+        0.957480788230896
+      ],
+      "yaw_degrees": -15.012458872589319,
+      "expected_outline_yaw_degrees": 75,
+      "square_outline_error_degrees": 0.012458872589320436,
+      "vertical_center_error_m": -1.921176910402167e-05
+    },
+    {
+      "color": "white",
+      "position_m": [
+        0.0002104134182445705,
+        -0.3501127064228058,
+        0.9924805760383606
+      ],
+      "yaw_degrees": 0.05503436560763336,
+      "expected_outline_yaw_degrees": 90,
+      "square_outline_error_degrees": 0.0550343656076393,
+      "vertical_center_error_m": -1.9423961639342124e-05
+    }
+  ],
+  "final_wait_physics_steps": 250,
+  "final_wait_simulation_seconds": 1.0,
+  "max_center_drift_during_final_wait_m": 1.437868256382555e-07,
+  "max_horizontal_center_radius_m": 0.00023869760015351262,
+  "max_square_outline_error_degrees": 0.0550343656076393,
+  "actual_native_image_inputs": {
+    "head": 80,
+    "left_wrist": 13,
+    "right_wrist": 9
+  },
+  "actual_native_image_count": 102,
+  "transport_recoveries": 0,
+  "cli_exit_code": 0,
+  "limitations": [
+    "Single exploratory trial; no model ranking or capability upper-bound claim.",
+    "One-second simulated static check; tiny numeric drift does not establish physical precision or long-term stability.",
+    "Arms manipulated blocks sequentially through native cuRobo; this is not direct learned low-level control.",
+    "Three image streams were available; the agent selected which to expose as actual input images.",
+    "Head camera is steeply elevated and partly occludes lower layers; final coordinates supplement actual images."
+  ]
+}

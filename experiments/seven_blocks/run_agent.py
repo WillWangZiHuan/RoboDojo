@@ -39,6 +39,22 @@ def bridge_in_flight(directory):
     return requested > answered
 
 
+def model_tool_in_flight(events_path):
+    """Include MCP initialization/queue waits before the bridge is ready."""
+    pending = set()
+    for line in events_path.read_text().splitlines():
+        row = json.loads(line)
+        item = row.get("item", {})
+        if (item.get("type"), item.get("server"), item.get("tool")) != (
+                "mcp_tool_call", "seven_blocks", "robot"):
+            continue
+        if row.get("type") == "item.started":
+            pending.add(item["id"])
+        elif row.get("type") == "item.completed":
+            pending.discard(item["id"])
+    return bool(pending)
+
+
 def end_client(process):
     """End only this client's process group; the HTTP simulator stays alive."""
     os.killpg(process.pid, signal.SIGTERM)
@@ -144,7 +160,8 @@ def main():
                 rpc = bridge_output / "rpc.jsonl"
                 last_progress = max(launched, events_path.stat().st_mtime,
                                     rpc.stat().st_mtime if rpc.exists() else launched)
-                if time.time() - last_progress < args.transport_idle_seconds or bridge_in_flight(bridge_output):
+                if (time.time() - last_progress < args.transport_idle_seconds
+                        or bridge_in_flight(bridge_output) or model_tool_in_flight(events_path)):
                     continue
                 # Never reissue an uncertain physical command. Resume the saved
                 # dialogue, which first observes the still-live environment.

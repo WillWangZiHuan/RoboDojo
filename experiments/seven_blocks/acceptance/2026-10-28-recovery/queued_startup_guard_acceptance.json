@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "synthetic_only": true,
+  "model_calls": 0,
+  "physical_simulators": 0,
+  "pending_initial_mcp_without_rpc_prevents_restart": true,
+  "pending_physical_request_prevents_restart": true,
+  "silent_client_restarted_after_response": true,
+  "original_thread_id_preserved": true,
+  "physical_command_replayed": false
+}

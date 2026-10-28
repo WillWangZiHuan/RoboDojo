@@ -1,0 +1,12 @@
+{
+  "native_video_first_frame_unix": 1793175078.8783443,
+  "first_frame_source": "remote videos/frames.jsonl, frame=0 phase=initial",
+  "model_controller_started_unix": 1793175513.068342,
+  "pre_model_recording_seconds": 434.18999767303467,
+  "pre_model_activity": "Bridge persistence checks and read-only observations; accepted initial actions=physics_steps=resets=0. Fresh model context received no prior trial or check transcript.",
+  "reporting_rule": "Report model-controller elapsed time separately from native first-frame-to-final-observation wall-video duration. Full raw recordings retain the initial frame; do not count pre-model engineering checks as model behavior.",
+  "submission_time_unix": 1793181727.331778,
+  "model_finished": true,
+  "model_controller_to_submit_seconds": 6214.263436079025,
+  "model_controller_to_exit_seconds": 6273.978721141815
+}

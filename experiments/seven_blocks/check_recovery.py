@@ -16,13 +16,16 @@ def check(output):
         bridge = root / "bridge"
         bridge.mkdir()
         journal = bridge / "rpc.jsonl"
-        journal.write_text(json.dumps({"event":"request","index":0,"request":{"op":"wait"}})+"\n")
+        journal.write_text("")
+        pending_item = {"type":"mcp_tool_call","server":"seven_blocks","tool":"robot","id":"initial-observe"}
         client = root / "synthetic_client"
         client.write_text("#!/usr/bin/env python3\nimport json,sys,time\nfrom pathlib import Path\n"
                           "print(json.dumps({'type':'thread.started','thread_id':'watchdog-test'}),flush=True)\n"
                           "if 'resume' in sys.argv:\n"
                           f" Path({str(bridge / 'terminal.json')!r}).write_text(json.dumps({{'status':'submitted'}}))\n"
-                          "else:time.sleep(3600)\n")
+                          "else:\n"
+                          f" print(json.dumps({{'type':'item.started','item':{pending_item!r}}}),flush=True)\n"
+                          " time.sleep(3600)\n")
         client.chmod(0o700)
         result_dir = root / "controller"
         command = [sys.executable,"-m","experiments.seven_blocks.run_agent","--codex",str(client),
@@ -31,6 +34,15 @@ def check(output):
         process = subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
         try:
             time.sleep(67)
+            assert process.poll() is None, "Controller exited during initial MCP/queue wait"
+            assert not (result_dir/"transport_recoveries.jsonl").exists(), "Restarted before the initial bridge reply"
+            events = result_dir / "agent_events.jsonl"
+            with events.open("a") as stream:
+                stream.write(json.dumps({"type":"item.completed","item":pending_item})+"\n")
+            os.utime(events,(time.time()-120,time.time()-120))
+            journal.write_text(json.dumps({"event":"request","index":0,"request":{"op":"wait"}})+"\n")
+            os.utime(journal,(time.time()-120,time.time()-120))
+            time.sleep(7)
             assert process.poll() is None, "Controller exited during pending physical request"
             assert not (result_dir/"transport_recoveries.jsonl").exists(), "Replayed an uncertain physical command"
             with journal.open("a") as stream:
@@ -44,6 +56,7 @@ def check(output):
             assert result["transport_recoveries"] == 1 and len(recovery) == 1
             assert recovery[0]["thread_id"] == "watchdog-test"
             report = {"passed":True,"synthetic_only":True,"model_calls":0,"physical_simulators":0,
+                      "pending_initial_mcp_without_rpc_prevents_restart":True,
                       "pending_physical_request_prevents_restart":True,
                       "silent_client_restarted_after_response":True,
                       "original_thread_id_preserved":True,"physical_command_replayed":False}

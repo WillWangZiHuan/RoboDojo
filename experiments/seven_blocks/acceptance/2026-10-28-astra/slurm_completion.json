@@ -1,0 +1,7 @@
+{
+  "job_id": 48918,
+  "state": "COMPLETED",
+  "elapsed": "01:52:16",
+  "exit_code": "0:0",
+  "source": "sacct -j 48918 --format=JobID,State,Elapsed,ExitCode -n -P"
+}
