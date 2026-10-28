@@ -59,6 +59,8 @@ def main():
     parser.add_argument("--output", type=Path, required=True, help="New directory; never overwrite a prior run")
     parser.add_argument("--template", type=Path, help="Native stack_blocks layout JSON override")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--agent-tools", action="store_true", help="Expose Cartesian planner and simulator coordinates")
+    parser.add_argument("--record-video", action="store_true", help="Continuous three-camera stdio recording")
     parser.add_argument("--preview-steps", type=int, default=250)
     parser.add_argument("--colors", nargs="+", choices=list(COLORS),
                         help="Run selected manipulation checks; default: all seven")
@@ -87,6 +89,7 @@ def main():
     add_zero_delay_kit_args(args)
     app = AppLauncher(args).app
     env = None
+    video = spatial = None
     journal = (args.output / "events.jsonl").open("w")
     frame_index = 0
 
@@ -119,7 +122,11 @@ def main():
         # Ground truth is evidence on disk; the default agent reply is RGB only.
         state = env.snapshot()
         record({"event": "observation", "state": state, "images": images})
-        return {"images": images, "status": env.episode.status}
+        result = {"images": images, "status": env.episode.status}
+        if spatial is not None:
+            result["state"] = spatial.state()
+            result["control_template"] = env.control_template()
+        return result
 
     try:
         from experiments.seven_blocks.environment import SevenBlocksEnv, build_config
@@ -128,6 +135,15 @@ def main():
         config = build_config(args.seed)
         env = SevenBlocksEnv(config, app, args.template)
         env.reset(seed=[args.seed])
+        if args.agent_tools:
+            from experiments.seven_blocks.spatial_control import SpatialControl
+
+            spatial = SpatialControl(env, record)
+        if args.record_video:
+            from experiments.seven_blocks.recording import VideoRecorder
+
+            video = VideoRecorder(env, args.output / "videos")
+            env.physics_observer = video.step
         dump(args.output / "layout.json", env.layout)
         dump(args.output / "config.json", OmegaConf.to_container(config, resolve=True))
         initial = observe()
@@ -190,7 +206,9 @@ def main():
         else:
             reply({"event": "ready", "instruction": INSTRUCTION, **initial,
                    "control_template": env.control_template(), "dt": env.dt,
-                   "operations": ["observe", "act", "reset", "submit", "stop"]})
+                   "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
+                   "operations": ["observe", "act", "reset", "submit", "stop"] +
+                       (["move", "gripper", "wait"] if spatial is not None else [])})
             for line in sys.stdin:
                 if not line.strip():
                     continue
@@ -200,8 +218,13 @@ def main():
                         raise ValueError("Request must be a JSON object")
                     record({"event": "request", "request": request})
                     op = request["op"]
+                    details = {}
+                    if video is not None:
+                        video.phase = f"{frame_index}:{op}"
                     if op == "act":
                         env.act(request["control"], request.get("physics_steps", 10))
+                    elif op in ("move", "gripper", "wait") and spatial is not None:
+                        details = spatial.execute(request)
                     elif op == "reset":
                         env.soft_reset(request.get("reason", "agent requested scene reset"))
                     elif op == "submit":
@@ -210,7 +233,7 @@ def main():
                         env.episode.interrupt(request.get("reason", "operator stopped session"))
                     elif op != "observe":
                         raise ValueError(f"Unknown operation: {op}")
-                    reply({"event": "result", **observe()})
+                    reply({"event": "result", **details, **observe()})
                     if env.episode.status != "running":
                         break
                 except (KeyError, ValueError, TypeError) as exc:
@@ -226,6 +249,9 @@ def main():
         try:
             if env is not None:
                 dump(args.output / "episode.json", asdict(env.episode))
+                env.physics_observer = None
+                if video is not None:
+                    dump(args.output / "recording.json", video.close())
                 env.close()
         finally:
             journal.close()

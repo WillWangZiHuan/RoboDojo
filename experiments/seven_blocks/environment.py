@@ -61,6 +61,8 @@ class SevenBlocksEnv(TaskEnv):
         self._apply_colors()
         for _ in range(100):
             self.sim_step(render=False)
+            if self.physics_observer is not None:
+                self.physics_observer()
         self.robot_manager.set_origin_endpose()
         self.robot_manager.set_robot_init_state()
         # Clear temporal render history after the reset's pose discontinuity.

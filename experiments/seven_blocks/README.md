@@ -19,7 +19,7 @@
 - 初始位置为桌面两排错列，坐标见 `protocol.py`；所有方块质量 50 g，静摩擦 0.8、动摩擦 0.6、恢复系数 0。
 - 颜色通过 USD 材质覆盖原贴图，同时更新对象描述，避免画面颜色与文本描述冲突。
 - 第一版允许 agent 显式重置整个场景：恢复方块位姿与机器人初始关节状态，静置后刷新渲染历史。累计动作数与重置历史保留；不静默恢复掉落方块。该选择是实现默认值，后续可调整。
-- 控制接口使用原生关节目标，尚未选定或接入 agent、VLA、抓取规划器。动作仍受机器人和仿真物理限制。
+- 控制接口保留原生关节目标，并已接入 GPT-6 Astra 与原生 cuRobo 笛卡尔运动规划器。首次自主展示条件由用户选定：三相机 RGB + 方块真实坐标；无 VLA。动作仍受机器人和仿真物理限制。
 - 默认返回 RGB 图像路径；物体真实位姿仅写入实验日志。是否把坐标提供给 agent 应作为单独实验条件。
 
 ## 运行
@@ -80,7 +80,7 @@ sbatch --partition=RTX3090 --gres=gpu:3090:1 --cpus-per-task=8 --mem=48G \
 
 ## 证据与验收
 
-每次运行保存 `config.json`、`layout.json`、`events.jsonl`、相机 PNG 和 `episode.json`。每次观察、动作后状态与输入请求可核对。`manipulation` 另为每个方块保存头部、左腕、右腕三个完整 MP4（共 21 段），在每 10 个物理步采样一次，25 fps 按仿真时间播放；每段从重置完成开始，不包含重置过程或规划计算的现实等待时间。`frames.jsonl` 对应每帧的仿真时刻、动作阶段和物体状态。其中 `physics_tick` 是片段内实际物理步；`state.actions/physics_steps` 是已完成命令的累计计数，长命令执行中尚未结算。正式 agent 控制器尚未接入，`stdio` 当前仍是逐命令记录。
+每次运行保存 `config.json`、`layout.json`、`events.jsonl`、相机 PNG 和 `episode.json`。每次观察、动作后状态与输入请求可核对。`manipulation` 另为每个方块保存头部、左腕、右腕三个完整 MP4（共 21 段），在每 10 个物理步采样一次，25 fps 按仿真时间播放；每段从重置完成开始，不包含重置过程或规划计算的现实等待时间。`frames.jsonl` 对应每帧的仿真时刻、动作阶段和物体状态。其中 `physics_tick` 是片段内实际物理步；`state.actions/physics_steps` 是已完成命令的累计计数，长命令执行中尚未结算。`stdio --agent-tools --record-video` 为自主实验开放运动规划器及真实坐标，并连续保存全部动作与显式重置中的物理帧；原始视频按仿真时间播放，逐帧现实时间戳支持重建包含模型思考等待的现实时间录像。
 
 `smoke` 检查七个标签、有限且相同的物体尺寸、桌面支撑、初始无重叠、静置漂移、相机帧可读、重置保留累计记录、提交前不结束、提交后拒绝动作。全部通过才写 `acceptance.json`。还需人工检查输出图像是否七色清晰、是否都在可见区域，并实际验证抓取与放置；本地单元测试不能替代这一步。
 
@@ -99,3 +99,27 @@ python -m experiments.seven_blocks.verify_recordings /path/to/manipulation_run
 仓库：`WillWangZiHuan/RoboDojo`；工作分支：`will/open-ended-seven-blocks`。改动集中在 `experiments/seven_blocks/`，保留原生任务与子模块版本。每次修改先运行协议测试，涉及物理、视角或资产的改动再运行 GPU smoke，通过后提交并 push。本路线不恢复此前暂停的 Harness / VLA 批量实验。
 
 进度与验收目标见 [GOAL.md](GOAL.md)。
+
+## 自主展示（2026-10-28 接入）
+
+用户选定 GPT-6 Astra + 原生 cuRobo，允许读取方块真实坐标。`run_agent.py` 启动本机已登录的 Codex CLI，模型仅能调用独立 `seven_blocks.robot` MCP 工具。用户提示词沿用本文原句；系统说明只解释接口、观察/重试/提交语义，不给目标结构或作品示范。CLI 不设置模型轮数、动作次数或失败次数上限，环境只在 agent 的 `submit` 后记录自主提交。进程结束而未提交仍为中断。
+
+`agent_bridge.py` 通过 SSH 在独立 Slurm GPU 作业运行仿真，不在登录节点执行 Isaac。分区的 72 小时作业时限属于基础设施限制，达到后必须记为中断。模型与仿真都保留独立日志；模型对话不读取前述抓放验收结果。只有本次机器人 MCP 工具在启动参数中预先许可；其他工具、个人记忆和项目文档读取均不开放。
+
+工具提供 `move`（任意 TCP 位置/姿态的 cuRobo 规划）、`gripper`、`wait`、原生 `act`、`observe`、显式 `reset` 和 `submit`。每次工具调用后给模型返回真实结果、状态及三张当前 RGB 图像。规划失败不会自动重置或偷偷重试；后续行为由模型决定。
+
+在有 `mcp` 依赖的本机 Python 环境，从仓库根目录启动：
+
+```bash
+python -m experiments.seven_blocks.run_agent \
+  --codex /absolute/path/to/codex \
+  --output /absolute/path/to/new_experiment_directory
+```
+
+`condition.json` 冻结完整指令与 CLI 参数；`agent_events.jsonl` 保存模型公开输出与工具事件；`bridge/rpc.jsonl` 保存实际请求/反馈；`bridge/allocation.json` 给出唯一远程输出目录。下载整个远程目录后运行：
+
+```bash
+python -m experiments.seven_blocks.render_agent_video /absolute/path/to/downloaded_simulation
+```
+
+生成三路原始录像的完整解码核验、含等待时间的头部视角现实时间录像，以及自动选择约 150 秒长度的倍速观看版。原始三路录像不裁剪；倍速版按明确倍率重采样，保留全程时间顺序。该探索性单次实验不证明模型能力上限，也不把自述满意当作外部评分。
