@@ -1,0 +1,8 @@
+{
+  "checked_unix": 1793190218.370433,
+  "job_id": 48999,
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "01:21:44",
+  "explicit_submission_evidence": "bridge/terminal.json and simulator episode.json, not job exit code alone"
+}

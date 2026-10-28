@@ -1,0 +1,318 @@
+{
+  "passed": true,
+  "scope": "Actual input_image items in native tool outputs, including repeated deliveries",
+  "images_delivered_to_model": 33,
+  "unique_image_hashes_delivered": 33,
+  "all_match_saved_observations": true,
+  "native_sources": [
+    {
+      "file": "rollout-2026-10-28T18-14-57-01a18201-7b92-7be1-962f-243e02625705.jsonl",
+      "sha256": "345136688854be916a92af5916e4f02085248d7c94ff5b248201c656f23dbd24"
+    }
+  ],
+  "images": [
+    {
+      "timestamp": "2026-10-28T10:57:37.827Z",
+      "call_id": "call_65f67ee68297478698f3a51b1f69f203",
+      "sha256": "861dddf62ec9149cee0ee4543c30c1a8eba049ef299822af2b17359536ed4f73",
+      "bytes": 353263,
+      "matching_local_files": [
+        "bridge/observations/000002/frame_000002_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T10:57:37.827Z",
+      "call_id": "call_65f67ee68297478698f3a51b1f69f203",
+      "sha256": "9a320aec029f7125e3edccc45a29e86269d4b58a3c66db634e65c488969a4c3b",
+      "bytes": 315082,
+      "matching_local_files": [
+        "bridge/observations/000002/frame_000002_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T10:57:37.827Z",
+      "call_id": "call_65f67ee68297478698f3a51b1f69f203",
+      "sha256": "8064e846ca9f59c0278c9f3067a48b2d0746ad9c91983426cbe5a9d158609402",
+      "bytes": 317015,
+      "matching_local_files": [
+        "bridge/observations/000002/frame_000002_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T10:59:02.052Z",
+      "call_id": "call_606538b80e874e3daa47287c504ae725",
+      "sha256": "b98c90976af7db02ab9e7c83e18ccc37942f588eed60464baff2e2b309d2b1c6",
+      "bytes": 374519,
+      "matching_local_files": [
+        "bridge/observations/000003/frame_000003_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T10:59:02.052Z",
+      "call_id": "call_606538b80e874e3daa47287c504ae725",
+      "sha256": "a1429287375a8e8f7c67aa45b01504ec56df772d310a91b99a1af4e030fe385f",
+      "bytes": 286102,
+      "matching_local_files": [
+        "bridge/observations/000003/frame_000003_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T10:59:02.052Z",
+      "call_id": "call_606538b80e874e3daa47287c504ae725",
+      "sha256": "30a28ae1d4760b8f20f2b68fe5c8b3e3a87e7bae8e86b12d47b1c414ebd83b79",
+      "bytes": 334088,
+      "matching_local_files": [
+        "bridge/observations/000003/frame_000003_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T10:59:48.725Z",
+      "call_id": "call_d9fc826634e74c468622879811ba333c",
+      "sha256": "9e42e7b52ba3c973516b3b37e66ffef076a78030cb4e21522d128d68d9983f25",
+      "bytes": 383552,
+      "matching_local_files": [
+        "bridge/observations/000004/frame_000004_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T10:59:48.725Z",
+      "call_id": "call_d9fc826634e74c468622879811ba333c",
+      "sha256": "23ab9f599bbb7d77e0ede536a6cc91725cae2b9437aa8f0cd620a3db30ebdf51",
+      "bytes": 226209,
+      "matching_local_files": [
+        "bridge/observations/000004/frame_000004_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T10:59:48.725Z",
+      "call_id": "call_d9fc826634e74c468622879811ba333c",
+      "sha256": "2db06f6227f03f589fd750932d563b283c3a56ca93338c8e0b3d4af90ee034c8",
+      "bytes": 340908,
+      "matching_local_files": [
+        "bridge/observations/000004/frame_000004_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:01:36.355Z",
+      "call_id": "call_b23e4fcb3e0d478e972426473c4e9d3d",
+      "sha256": "3a93054358aa74c26767ea87d4b89b188652d7011df562c280d1e808768e30ec",
+      "bytes": 394871,
+      "matching_local_files": [
+        "bridge/observations/000006/frame_000006_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:01:36.355Z",
+      "call_id": "call_b23e4fcb3e0d478e972426473c4e9d3d",
+      "sha256": "839ea49d2f1ea696e64e1b9d88c4cc9f99e28cbf11331c7b31cfa3a129aac083",
+      "bytes": 253069,
+      "matching_local_files": [
+        "bridge/observations/000006/frame_000006_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:01:36.355Z",
+      "call_id": "call_b23e4fcb3e0d478e972426473c4e9d3d",
+      "sha256": "538f508a7538fd8965cbe6e574e191ddbc015b82e559127b8d8bc1889d31b6b2",
+      "bytes": 350688,
+      "matching_local_files": [
+        "bridge/observations/000006/frame_000006_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:02:55.964Z",
+      "call_id": "call_7fbe3042c09b4c43b926d0fb8604c795",
+      "sha256": "2e54fd34befc028dd4d04f8f44c6c61c43b7626901c4d743288f4936a5f08fed",
+      "bytes": 409749,
+      "matching_local_files": [
+        "bridge/observations/000007/frame_000007_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:02:55.964Z",
+      "call_id": "call_7fbe3042c09b4c43b926d0fb8604c795",
+      "sha256": "9b4ca66e41fa2abfa68c0c2cd417f7d1ae2e51988c2dd091ac48b0e2c09015d5",
+      "bytes": 299783,
+      "matching_local_files": [
+        "bridge/observations/000007/frame_000007_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:02:55.964Z",
+      "call_id": "call_7fbe3042c09b4c43b926d0fb8604c795",
+      "sha256": "83774d2723e74f5c8cd85c69f18a0ce8705bf3eb386184e58a1bbfe0e51ee6d5",
+      "bytes": 355441,
+      "matching_local_files": [
+        "bridge/observations/000007/frame_000007_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:03:42.648Z",
+      "call_id": "call_df377ec3395344c2a75023cf22515498",
+      "sha256": "e004b7e28e35c273a3f4c67fda7530613818f17004fb7d2cb93e2074e142b891",
+      "bytes": 415393,
+      "matching_local_files": [
+        "bridge/observations/000008/frame_000008_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:03:42.648Z",
+      "call_id": "call_df377ec3395344c2a75023cf22515498",
+      "sha256": "41ef1440fa28a812c81dc01db5d9874f3784fd66051acadb392cd6e72cfacc57",
+      "bytes": 232124,
+      "matching_local_files": [
+        "bridge/observations/000008/frame_000008_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:03:42.648Z",
+      "call_id": "call_df377ec3395344c2a75023cf22515498",
+      "sha256": "86987033e271c1633e9bf2b2dbb43e5dcdb98a556ce14651b1b28936805e4611",
+      "bytes": 357253,
+      "matching_local_files": [
+        "bridge/observations/000008/frame_000008_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:04:27.609Z",
+      "call_id": "call_139f9f1ec8a0410ea29018bdd698eb8a",
+      "sha256": "8bb78e11b52298739fd713c79aee1b691922f840b8a9058c1dc7375c01c2b641",
+      "bytes": 418849,
+      "matching_local_files": [
+        "bridge/observations/000009/frame_000009_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:04:27.609Z",
+      "call_id": "call_139f9f1ec8a0410ea29018bdd698eb8a",
+      "sha256": "181afdd2c18220bcee5fcdcfb34cfe707c993b419634482f2de5926cd868e01b",
+      "bytes": 255053,
+      "matching_local_files": [
+        "bridge/observations/000009/frame_000009_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:04:27.609Z",
+      "call_id": "call_139f9f1ec8a0410ea29018bdd698eb8a",
+      "sha256": "61ee5b5dcfba68d71b759b8dc8b22e177cca486e239f7b55b7277d111e52fedb",
+      "bytes": 359243,
+      "matching_local_files": [
+        "bridge/observations/000009/frame_000009_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:09:18.901Z",
+      "call_id": "call_fa0b9d5d59564ae18f63927a758bee3e",
+      "sha256": "5761a28e65c63e83482f68f7125474357f2ab26830d75ec3f27da7c39cd2f156",
+      "bytes": 415326,
+      "matching_local_files": [
+        "bridge/observations/000015/frame_000015_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:09:18.901Z",
+      "call_id": "call_fa0b9d5d59564ae18f63927a758bee3e",
+      "sha256": "98075524c7ff6b07cbccecbf6456fdc1e4c2d0cd8259d021c68c167a3e9aee38",
+      "bytes": 284566,
+      "matching_local_files": [
+        "bridge/observations/000015/frame_000015_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T11:09:18.901Z",
+      "call_id": "call_fa0b9d5d59564ae18f63927a758bee3e",
+      "sha256": "578f41ee2a85e33be258694321e8a3f3eff3ec6fdca674931d732b7ba3cfd938",
+      "bytes": 363008,
+      "matching_local_files": [
+        "bridge/observations/000015/frame_000015_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:14:40.257Z",
+      "call_id": "call_7a282c2de50a4338bfe0d0db65edcef9",
+      "sha256": "f84a3167caf76730f60e44a9a3fd690998c5f3e0f425e33f72d30e0cf0fb5184",
+      "bytes": 380371,
+      "matching_local_files": [
+        "bridge/observations/000084/frame_000084_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:14:40.257Z",
+      "call_id": "call_7a282c2de50a4338bfe0d0db65edcef9",
+      "sha256": "797a611d58e4de756417ea00e746835919ec306e028f4ad3748834627d71edc7",
+      "bytes": 317235,
+      "matching_local_files": [
+        "bridge/observations/000084/frame_000084_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:14:40.257Z",
+      "call_id": "call_7a282c2de50a4338bfe0d0db65edcef9",
+      "sha256": "830b926412e4cca33e790203b9d966d09ff0aa30b61c9b67db8ba371fb3cf456",
+      "bytes": 321745,
+      "matching_local_files": [
+        "bridge/observations/000084/frame_000084_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:16:17.744Z",
+      "call_id": "call_0e449025b80748f9ba4c166f6b04da9b",
+      "sha256": "2f0259887fbcd1912f61fea5d9dca86913e556dafa5516ddd5cd9b214aca7de3",
+      "bytes": 380664,
+      "matching_local_files": [
+        "bridge/observations/000085/frame_000085_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:16:17.744Z",
+      "call_id": "call_0e449025b80748f9ba4c166f6b04da9b",
+      "sha256": "9a859e5e50ac9a28a82fa814ed99bfb203a6d9f415fd641b929151c023b68316",
+      "bytes": 317944,
+      "matching_local_files": [
+        "bridge/observations/000085/frame_000085_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:16:17.744Z",
+      "call_id": "call_0e449025b80748f9ba4c166f6b04da9b",
+      "sha256": "4d66c59d7a7387149a95c5de2acaba838bc3cc824ff5e90f0060b89071166f67",
+      "bytes": 321489,
+      "matching_local_files": [
+        "bridge/observations/000085/frame_000085_cam_right_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:17:15.499Z",
+      "call_id": "call_d8cd7d07f1c54a70a225ca29fadd3889",
+      "sha256": "dbad1f183b5c8a0c07281805a731d780e18e6fb02e6a22906c7d54c435d0b810",
+      "bytes": 380668,
+      "matching_local_files": [
+        "bridge/observations/000086/frame_000086_cam_head.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:17:15.499Z",
+      "call_id": "call_d8cd7d07f1c54a70a225ca29fadd3889",
+      "sha256": "0a14996a2036081df633c48531054dcbfff5e1609191a47a18f3fdfa9f831950",
+      "bytes": 319527,
+      "matching_local_files": [
+        "bridge/observations/000086/frame_000086_cam_left_wrist.png"
+      ]
+    },
+    {
+      "timestamp": "2026-10-28T12:17:15.499Z",
+      "call_id": "call_d8cd7d07f1c54a70a225ca29fadd3889",
+      "sha256": "af7f2153532f815bd271f96a1d98b4983e8defbb96f938d67c1a4f3641ccf7af",
+      "bytes": 322670,
+      "matching_local_files": [
+        "bridge/observations/000086/frame_000086_cam_right_wrist.png"
+      ]
+    }
+  ],
+  "camera_counts": {
+    "head": 11,
+    "left_wrist": 11,
+    "right_wrist": 11
+  },
+  "offered_images_note": "每条机器人回复可用三路图像；实际原生 input_image 仅33张，不将所有可用图像计为模型实际输入。"
+}

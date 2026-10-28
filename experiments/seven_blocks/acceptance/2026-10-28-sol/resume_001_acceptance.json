@@ -1,0 +1,32 @@
+{
+  "checked_unix": 1793185080.837316,
+  "model": "gpt-6-sol",
+  "same_thread": true,
+  "shared_condition_parity": {
+    "instruction": true,
+    "original_user_text": true,
+    "instruction_normalization": true,
+    "reasoning_effort": true,
+    "system_prompt": true,
+    "simulator_ground_truth": true,
+    "native_curobo": true,
+    "vla": true,
+    "max_turns": true,
+    "max_actions": true,
+    "max_failures": true,
+    "model_timeout_seconds": true,
+    "demonstrations": true,
+    "personal_memory": true,
+    "transport_idle_recovery_seconds": true,
+    "auto_compact_token_limit": true
+  },
+  "controller_pid": 3556,
+  "client_pid": 3557,
+  "client_live": true,
+  "robot_responses": 2,
+  "latest_response_index": 1,
+  "actions": 0,
+  "physics_steps": 0,
+  "resets": 0,
+  "transport_recovery_count": 0
+}

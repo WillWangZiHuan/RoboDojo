@@ -1,0 +1,11 @@
+{
+  "auto_compact_token_limit": 60000,
+  "compactions": [
+    {
+      "timestamp": "2026-10-28T12:15:19.263Z",
+      "robot_requests_after": 2
+    }
+  ],
+  "count": 1,
+  "scope": "Native compacted event timestamps only; no hidden reasoning exported."
+}

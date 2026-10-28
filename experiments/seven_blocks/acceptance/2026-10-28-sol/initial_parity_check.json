@@ -1,0 +1,53 @@
+{
+  "checked_unix": 1793185016.2145011,
+  "reference": "astra_20261028_003 initial observation only",
+  "initial_response_exact_parity": {
+    "state": true,
+    "control_template": true,
+    "dt": true,
+    "operations": true,
+    "instruction": true,
+    "observe_state_unchanged": true
+  },
+  "shared_condition_exact_parity": {
+    "instruction": true,
+    "original_user_text": true,
+    "instruction_normalization": true,
+    "reasoning_effort": true,
+    "system_prompt": true,
+    "simulator_ground_truth": true,
+    "native_curobo": true,
+    "vla": true,
+    "max_turns": true,
+    "max_actions": true,
+    "max_failures": true,
+    "model_timeout_seconds": true,
+    "demonstrations": true,
+    "personal_memory": true,
+    "transport_idle_recovery_seconds": true,
+    "auto_compact_token_limit": true
+  },
+  "source_hashes_match_original_plus_disclosed_guard_revision": {
+    "experiments/seven_blocks/agent_bridge.py": true,
+    "experiments/seven_blocks/batch_transport.py": true,
+    "experiments/seven_blocks/check_recovery.py": true,
+    "experiments/seven_blocks/check_stdio.py": true,
+    "experiments/seven_blocks/collect_run.py": true,
+    "experiments/seven_blocks/environment.py": true,
+    "experiments/seven_blocks/manipulation.py": true,
+    "experiments/seven_blocks/protocol.py": true,
+    "experiments/seven_blocks/recording.py": true,
+    "experiments/seven_blocks/render_agent_video.py": true,
+    "experiments/seven_blocks/run.py": true,
+    "experiments/seven_blocks/run_agent.py": true,
+    "experiments/seven_blocks/spatial_control.py": true,
+    "experiments/seven_blocks/verify_recordings.py": true
+  },
+  "state_counters": {
+    "actions": 0,
+    "physics_steps": 0,
+    "resets": 0
+  },
+  "initial_images_local": 3,
+  "passed": true
+}

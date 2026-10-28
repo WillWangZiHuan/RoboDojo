@@ -1,0 +1,10 @@
+{
+  "episode_status": "submitted",
+  "all_camera_pngs_local": 261,
+  "raw_videos": [
+    "videos/cam_head.mp4",
+    "videos/cam_left_wrist.mp4",
+    "videos/cam_right_wrist.mp4"
+  ],
+  "archive_sha256": "29f1ec024b539ee76beac4fc50c922bd3e4cde8b440a63f5dc82254a4671b85f"
+}

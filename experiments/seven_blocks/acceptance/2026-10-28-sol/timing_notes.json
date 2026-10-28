@@ -1,0 +1,11 @@
+{
+  "recording_first_frame_unix": 1793184973.6930285,
+  "recording_last_observation_unix": 1793189797.9015756,
+  "wall_video_seconds": 4824.208547115326,
+  "resumed_model_start_unix": 1793185028.3076658,
+  "explicit_submit_request_unix": 1793189791.947295,
+  "resumed_model_to_submit_seconds": 4763.639629125595,
+  "pre_model_recording_seconds": 54.61463737487793,
+  "queue_and_startup_interruption_in_video": false,
+  "scope": "Video begins at first native simulator frame. Earlier Slurm waiting and model startup interruption are retained in logs, not falsely shown as physical footage."
+}

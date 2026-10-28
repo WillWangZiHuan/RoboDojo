@@ -1,0 +1,14 @@
+{
+  "kind": "model_startup_interruption_before_environment_ready",
+  "physical_episode_not_started": true,
+  "slurm_job": 48999,
+  "slurm_observed_state": "PENDING",
+  "slurm_reason": "Priority",
+  "model_thread": "01a18201-7b92-7be1-962f-243e02625705",
+  "mcp_observe_calls_started": 3,
+  "mcp_observe_calls_completed": 0,
+  "bridge_rpc_events": 0,
+  "model_requested_continuation_after_interface_ready": true,
+  "same_job_preserved": true,
+  "next_action": "Wait for original bridge initialization and first read-only observation to finish, verify initial scene, then resume original model thread in model_resume_001. No new allocation or physical reset."
+}

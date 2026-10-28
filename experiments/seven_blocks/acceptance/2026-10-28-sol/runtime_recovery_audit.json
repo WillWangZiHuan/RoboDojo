@@ -1,0 +1,32 @@
+{
+  "startup_interruption": {
+    "kind": "model_startup_interruption_before_environment_ready",
+    "physical_episode_not_started": true,
+    "slurm_job": 48999,
+    "slurm_observed_state": "PENDING",
+    "slurm_reason": "Priority",
+    "model_thread": "01a18201-7b92-7be1-962f-243e02625705",
+    "mcp_observe_calls_started": 3,
+    "mcp_observe_calls_completed": 0,
+    "bridge_rpc_events": 0,
+    "model_requested_continuation_after_interface_ready": true,
+    "same_job_preserved": true,
+    "next_action": "Wait for original bridge initialization and first read-only observation to finish, verify initial scene, then resume original model thread in model_resume_001. No new allocation or physical reset."
+  },
+  "resume_result": {
+    "status": "submitted",
+    "cli_exit_code": 0,
+    "started_unix": 1793185028.3076658,
+    "finished_unix": 1793189850.186344,
+    "transport_recoveries": 0
+  },
+  "native_stream_retry_events": [
+    "2026-10-28T11:46:19.075495Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 194ms)... turn_id=01a18228-1ca2-7271-bc53-eed15694af9d retries=1 max_retries=5 sampling_error=stream disconnected before completion: websocket closed by server before response.completed"
+  ],
+  "native_stream_retry_count": 1,
+  "watchdog_restarts_after_resume": 0,
+  "native_compaction_timestamps": [
+    "2026-10-28T12:15:19.263Z"
+  ],
+  "interpretation": "运行日志确认一次原生流断开后自动重试；没有监督器重启或物理重置。最终公开消息提到恢复连接，但最后观察前未发现新的一次连接恢复，不能把模型叙述当成网络事件证据。"
+}
