@@ -147,3 +147,16 @@ python -m experiments.seven_blocks.audit_model_images \
 ```
 
 旧 Astra 轮的完整中断归档见 [中断验收记录](acceptance/2026-10-28-astra-interrupted/README.md)。它与新持久架构下的三个模型轮次分别记录。
+
+### 公开过程同步视频
+
+`render_public_process.py` 在已有倍速视频右侧加入模型公开消息原文、当前工具请求与当时已返回的执行状态。使用浅色白底，输出 1920×1080 / 30 fps MP4。依赖 Pillow、NumPy、imageio-ffmpeg 和 macOS 的 STHeiti 字体；这是本地视频后处理工具，不改变实验控制或仿真。
+
+```bash
+python -m experiments.seven_blocks.render_public_process /absolute/path/to/run \
+  --native-root /absolute/path/to/native/session/directory
+```
+
+消息只允许来自已导出的 `agent_message`，再匹配原生公开 assistant message 的时间戳；不提取隐藏推理。文字保留标点、换行和 Markdown 字符，长行仅自动折行，不摘要或截断。时间戳对应整条消息记录完成的时刻，不声称是逐 token 或逐帧生成的思考。执行反馈只在其实际返回时间后显示。
+
+保留输入倍速视频全部帧、帧率和原倍率。录像开始前的公开消息以每条 5 秒的独立文字卡呈现，左侧不制造现场；录像结束后的公开回复使用末帧静止 10 秒，因此成片比原倍速视频略长。按用户版式要求，视频不叠加额外阅读提示和顶部状态说明；这些时间边界记录在旁车 JSON 中。输出位于 `simulation/公开过程同步版/`，完整解码、原视频哈希、全部公开消息覆盖及时间线分段核验保存在 `同步时间线与验收.json`。原视频不覆盖，已有输出也不覆盖。

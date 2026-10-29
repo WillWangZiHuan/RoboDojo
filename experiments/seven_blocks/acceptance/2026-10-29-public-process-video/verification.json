@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "style": "light background; specified explanatory overlays removed",
+  "public_text_verbatim": true,
+  "hidden_reasoning_exported": false,
+  "runs": [
+    {
+      "run": "astra_20261028_003",
+      "output": "全过程_48倍速_公开过程同步.mp4",
+      "size": [
+        1920,
+        1080
+      ],
+      "fps": 30,
+      "frames": 4459,
+      "duration_seconds": 148.63333333333333,
+      "source_frames_preserved": 4159,
+      "public_messages": 58,
+      "full_decode_passed": true,
+      "all_public_messages_shown": true,
+      "source_sha256": "7f6180ac7547606bf45d5d64d461efaed3b59d28c755f34128f0c0727f3b96ad",
+      "output_sha256": "3e47fca126df9c4f7bd74f7129f0eda347b5a4d307eafb0abd3b098fca8da8ba",
+      "bytes": 8187058,
+      "segments": [
+        {
+          "kind": "original_accelerated_video",
+          "start_frame": 0,
+          "frames": 4159,
+          "speed": 48,
+          "source_wall_start": 1793175078.8783443,
+          "source_wall_end": 1793181731.2831113
+        },
+        {
+          "kind": "post_recording_final_frame_hold",
+          "message": 58,
+          "start_frame": 4159,
+          "frames": 300
+        }
+      ]
+    },
+    {
+      "run": "sol_20261028_001",
+      "output": "全过程_32倍速_公开过程同步.mp4",
+      "size": [
+        1920,
+        1080
+      ],
+      "fps": 30,
+      "frames": 6174,
+      "duration_seconds": 205.8,
+      "source_frames_preserved": 4524,
+      "public_messages": 25,
+      "full_decode_passed": true,
+      "all_public_messages_shown": true,
+      "source_sha256": "3054becc25cc9fbab4b6ce198f42a73f81ffc3fa4806a66b8d12643f6752b953",
+      "output_sha256": "915ae910205f0a2846cffd01e70ee820e74946968557c84781d0d8778276c794",
+      "bytes": 9148598,
+      "segments": [
+        {
+          "kind": "pre_recording_public_card",
+          "message": 1,
+          "start_frame": 0,
+          "frames": 150
+        },
+        {
+          "kind": "pre_recording_public_card",
+          "message": 2,
+          "start_frame": 150,
+          "frames": 150
+        },
+        {
+          "kind": "pre_recording_public_card",
+          "message": 3,
+          "start_frame": 300,
+          "frames": 150
+        },
+        {
+          "kind": "pre_recording_public_card",
+          "message": 4,
+          "start_frame": 450,
+          "frames": 150
+        },
+        {
+          "kind": "pre_recording_public_card",
+          "message": 5,
+          "start_frame": 600,
+          "frames": 150
+        },
+        {
+          "kind": "pre_recording_public_card",
+          "message": 6,
+          "start_frame": 750,
+          "frames": 150
+        },
+        {
+          "kind": "pre_recording_public_card",
+          "message": 7,
+          "start_frame": 900,
+          "frames": 150
+        },
+        {
+          "kind": "pre_recording_public_card",
+          "message": 8,
+          "start_frame": 1050,
+          "frames": 150
+        },
+        {
+          "kind": "pre_recording_public_card",
+          "message": 9,
+          "start_frame": 1200,
+          "frames": 150
+        },
+        {
+          "kind": "original_accelerated_video",
+          "start_frame": 1350,
+          "frames": 4524,
+          "speed": 32,
+          "source_wall_start": 1793184973.6930285,
+          "source_wall_end": 1793189797.9015756
+        },
+        {
+          "kind": "post_recording_final_frame_hold",
+          "message": 25,
+          "start_frame": 5874,
+          "frames": 300
+        }
+      ]
+    },
+    {
+      "run": "terra_20261028_001",
+      "output": "全过程_48倍速_公开过程同步.mp4",
+      "size": [
+        1920,
+        1080
+      ],
+      "fps": 30,
+      "frames": 4044,
+      "duration_seconds": 134.8,
+      "source_frames_preserved": 3744,
+      "public_messages": 84,
+      "full_decode_passed": true,
+      "all_public_messages_shown": true,
+      "source_sha256": "bd1fd23a087b4304e1b85e467271195b136eb4bd26b0e67ec85f9bb90661d891",
+      "output_sha256": "dcc1f41ea3718159d101884a069a0d484037fedcc1582e3ca98efce44eaaa901",
+      "bytes": 8152233,
+      "segments": [
+        {
+          "kind": "original_accelerated_video",
+          "start_frame": 0,
+          "frames": 3744,
+          "speed": 48,
+          "source_wall_start": 1793190085.889216,
+          "source_wall_end": 1793196074.6110532
+        },
+        {
+          "kind": "post_recording_final_frame_hold",
+          "message": 84,
+          "start_frame": 3744,
+          "frames": 300
+        }
+      ]
+    }
+  ]
+}
